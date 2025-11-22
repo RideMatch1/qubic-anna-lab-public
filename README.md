@@ -8,6 +8,16 @@ This repository documents the complete research journey from initial discovery t
 
 ---
 
+## Quick Start
+
+1. **Verify the matrix file**: `shasum -a 256 data/anna-matrix/Anna_Matrix.xlsx` (should be `bdee333b...`)
+2. **Run verification**: `./run_all_verifications.sh`
+3. **Check identities**: See `FOUND_IDENTITIES.md` for initial 8 identities
+4. **View sample data**: See `100_SEEDS_AND_IDENTITIES.md` for 100 seeds with real IDs
+5. **Complete database**: See `outputs/analysis/complete_mapping_database.json` (23,765 seeds, ~50MB)
+
+---
+
 ## Research Timeline
 
 ### Phase 1: Initial Discovery - The Number 26
@@ -157,7 +167,9 @@ The matrix structure matches Aigarth Intelligent Tissue characteristics:
 
 **Files**: 
 - `FINAL_ANALYSIS_STATUS.md`
-- `outputs/analysis/complete_mapping_database.json`
+- `IDENTITY_DISCREPANCY_ANALYSIS.md`
+- `MAPPING_DATABASE_SUMMARY.md`
+- `outputs/analysis/complete_mapping_database.json` (large file, ~50MB)
 
 ---
 
@@ -174,6 +186,7 @@ The matrix structure matches Aigarth Intelligent Tissue characteristics:
 - **8 initial seeds**: Derived from Layer-1 identities
 - **23,765 seeds mapped**: Complete mapping of seeds to real derived identities
 - **All seeds functional**: Cryptographically valid and produce on-chain identities
+- **100% mismatch rate**: All seeds produce different identities than documented (see `IDENTITY_DISCREPANCY_ANALYSIS.md`)
 
 ### Patterns
 
@@ -181,6 +194,34 @@ The matrix structure matches Aigarth Intelligent Tissue characteristics:
 - **Helix Gate patterns**: 26,562 patterns confirming Aigarth architecture
 - **Evolutionary signatures**: 199,855 repeating patterns suggesting selection
 - **Character bias**: Documented IDs show strong 'A'/'M' bias (9,698 / 4,616 occurrences)
+
+---
+
+## Complete Data Files
+
+### Sample Data (100 Seeds)
+
+- **`100_SEEDS_AND_IDENTITIES.md`** - Human-readable table with:
+  - 100 seeds (55 characters each)
+  - 100 documented identities (from matrix extraction)
+  - 100 real identities (derived from seeds using Qubic Wallet)
+  - Match status (0 matches, 100 mismatches)
+  - Character differences per identity
+
+- **`100_seeds_and_identities.json`** - Machine-readable format with complete mapping data
+
+### Complete Database (23,765 Seeds)
+
+- **`outputs/analysis/complete_mapping_database.json`** - Complete mapping database:
+  - 23,765 seeds mapped to real identities
+  - 23,765 documented identities from matrix
+  - All mappings and statistics
+  - Large file (~50MB)
+
+- **`MAPPING_DATABASE_SUMMARY.md`** - Summary statistics and analysis
+- **`ALL_23765_SEEDS_SUMMARY.md`** - Complete seeds database summary
+- **`IDENTITY_DISCREPANCY_ANALYSIS.md`** - Detailed discrepancy analysis
+- **`COMPLETE_DATA_INDEX.md`** - Index to all data files
 
 ---
 
@@ -239,12 +280,25 @@ scripts/
   core/                     # Core logic (seed scan, derivations)
   verify/                   # RPC & validation tools
   utils/                    # Helper utilities
-data/anna-matrix/           # Source Excel file
+data/anna-matrix/           # Source Excel file (SHA256: bdee333b...)
 outputs/
   reports/                  # Analysis reports
   derived/                  # Derived data (JSON/Markdown)
+  analysis/                 # Complete mapping database and analysis
+    complete_mapping_database.json  # Full mapping (23,765 seeds, ~50MB)
 external_verifications/     # Independent verification results
+docs/
+  status/                   # Status and update files (moved from root)
+  internal/                 # Internal documentation (validation, audit reports, etc.)
 ```
+
+### Key Data Files
+
+- **`100_SEEDS_AND_IDENTITIES.md`** - Sample of 100 seeds with documented and real identities
+- **`100_seeds_and_identities.json`** - Machine-readable format
+- **`outputs/analysis/complete_mapping_database.json`** - Complete mapping of all 23,765 seeds (large file)
+- **`MAPPING_DATABASE_SUMMARY.md`** - Summary statistics
+- **`IDENTITY_DISCREPANCY_ANALYSIS.md`** - Detailed discrepancy analysis
 
 ---
 
@@ -257,6 +311,7 @@ external_verifications/     # Independent verification results
 3. **All seeds are functional** - Cryptographically valid and produce identities
 4. **Matrix structure matches Aigarth** - Helix Gate patterns confirm architecture
 5. **26 zero values are control neurons** - Located near identity extraction regions
+6. **100% mismatch rate** - All seeds produce different identities than documented
 
 ### Open Questions
 
@@ -280,8 +335,13 @@ external_verifications/     # Independent verification results
 
 - `PROOF_OF_WORK.md` - Complete proof pipeline with hashes and commands
 - `FOUND_IDENTITIES.md` - All 8 initial identities
-- `100_SEEDS_AND_IDENTITIES.md` - Sample of 100 seeds and identities
-- `FINAL_ANALYSIS_STATUS.md` - Current research status
+- `100_SEEDS_AND_IDENTITIES.md` - Sample of 100 seeds and identities with real IDs and mismatch analysis
+- `100_seeds_and_identities.json` - Machine-readable format with complete mapping data
+- `FINAL_ANALYSIS_STATUS.md` - Current research status (23,765 seeds mapped)
+- `IDENTITY_DISCREPANCY_ANALYSIS.md` - Detailed analysis of identity discrepancy
+- `MAPPING_DATABASE_SUMMARY.md` - Summary of complete mapping database (23,765 seeds)
+- `ALL_23765_SEEDS_SUMMARY.md` - Complete seeds database summary
+- `COMPLETE_DATA_INDEX.md` - Index to all data files
 
 ### Analysis Reports
 
@@ -295,6 +355,7 @@ external_verifications/     # Independent verification results
 - `outputs/derived/QUBIC_STACK_ANALYSIS.md` - Qubic Stack architecture
 - `outputs/derived/AIGARTH_PAPER_ANALYSIS.md` - Aigarth framework analysis
 - `outputs/derived/IS_THIS_AGI_ANALYSIS.md` - AGI assessment
+- `RESEARCH_UPDATE_2025_11_22.md` - Research update summary
 
 ---
 
@@ -315,12 +376,19 @@ We encourage independent verification. See `external_verifications/README.md` fo
 - They're reproducible from the matrix (verifiable fact)
 - Random matrices don't produce the same results (verifiable fact)
 - Matrix structure matches Aigarth Intelligent Tissue (interpretation)
+- 100% mismatch rate between documented and real identities (verifiable fact)
 
 **What we don't know**:
 - Whether encoding was intentional
-- The true transformation function f(Matrix) = Seed
+- The true transformation function f(Matrix) = Seed (see `IDENTITY_DISCREPANCY_ANALYSIS.md`)
 - The purpose of the structure
-- Why seeds produce different identities than documented
+- Why seeds produce different identities than documented (100% mismatch rate)
+
+**Complete Data Available**:
+- All 23,765 seeds mapped to real identities: `outputs/analysis/complete_mapping_database.json`
+- Sample of 100 seeds: `100_SEEDS_AND_IDENTITIES.md` and `100_seeds_and_identities.json`
+- Summary statistics: `MAPPING_DATABASE_SUMMARY.md`
+- Detailed analysis: `IDENTITY_DISCREPANCY_ANALYSIS.md`
 
 **Next steps**:
 - Find the true transformation function
@@ -336,6 +404,7 @@ We encourage independent verification. See `external_verifications/README.md` fo
 - **All identities have balance 0** - They exist but have no funds
 - **All findings are reproducible** - Use the scripts provided to verify independently
 - **Research is ongoing** - Findings may evolve as research continues
+- **Complete database is large** - `complete_mapping_database.json` is ~50MB
 
 ---
 
