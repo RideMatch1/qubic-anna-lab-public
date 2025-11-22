@@ -56,7 +56,7 @@ echo -e "${GREEN}✓ Vortex identities extracted${NC}"
 echo ""
 
 echo -e "${YELLOW}Step 4: Run control group test...${NC}"
-python3 scripts/verify/control_group.py --matrices 200 --no-rpc || {
+PYTHONPATH="$PWD" python3 scripts/verify/control_group.py --matrices 200 --no-rpc || {
     echo -e "${RED}Error: Control group test failed${NC}"
     exit 1
 }
@@ -64,7 +64,7 @@ echo -e "${GREEN}✓ Control group test complete${NC}"
 echo ""
 
 echo -e "${YELLOW}Step 5: Calculate statistical significance...${NC}"
-python3 scripts/verify/statistical_significance.py || {
+PYTHONPATH="$PWD" python3 scripts/verify/statistical_significance.py || {
     echo -e "${RED}Error: Statistical analysis failed${NC}"
     exit 1
 }

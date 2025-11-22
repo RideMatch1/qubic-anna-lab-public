@@ -14,6 +14,13 @@ Usage:
 
 from typing import Optional
 
+import sys
+from pathlib import Path
+
+# Add project root to Python path
+project_root = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(project_root))
+
 from analysis.utils.identity_tools import IDENTITY_BODY_LENGTH, IDENTITY_LENGTH
 from scripts.core.identity_constants import SEED_LENGTH
 

@@ -3,6 +3,13 @@
 This module provides a single source of truth for all identity definitions.
 Import from here instead of defining identities in multiple places.
 """
+import sys
+from pathlib import Path
+
+# Add project root to Python path
+project_root = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(project_root))
+
 from analysis.utils.identity_tools import IDENTITY_BODY_LENGTH, IDENTITY_LENGTH
 
 # Seed length (55 chars) - derived from identity body length

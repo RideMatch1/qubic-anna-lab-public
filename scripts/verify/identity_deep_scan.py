@@ -37,6 +37,13 @@ OUTPUT_DIR = Path("outputs/derived")
 OUTPUT_JSON = OUTPUT_DIR / "identity_deep_scan.json"
 OUTPUT_MD = OUTPUT_DIR / "identity_deep_scan.md"
 
+import sys
+from pathlib import Path
+
+# Add project root to Python path
+project_root = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(project_root))
+
 from analysis.utils.identity_tools import IDENTITY_BODY_LENGTH
 from scripts.core.identity_constants import SEED_LENGTH
 

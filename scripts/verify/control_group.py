@@ -26,6 +26,13 @@ from typing import Dict, List
 
 import numpy as np
 
+import sys
+from pathlib import Path
+
+# Add project root to Python path
+project_root = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(project_root))
+
 from analysis.utils.identity_tools import IDENTITY_BODY_LENGTH, IdentityRecord, base26_char, identity_from_body, public_key_from_identity
 
 OUTPUT_MARKDOWN = Path("outputs/reports/control_group_report.md")

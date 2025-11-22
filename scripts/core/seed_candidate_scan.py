@@ -32,9 +32,17 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import List, Optional, Sequence
 
+import sys
+from pathlib import Path
+
+# Add project root to Python path
+project_root = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(project_root))
+
 from analysis.utils.identity_tools import identity_from_body, checksum_letters
 
 # Import identities and constants from single source of truth
+# Already added to path above
 from analysis.utils.identity_tools import IDENTITY_BODY_LENGTH, IDENTITY_LENGTH
 from scripts.core.identity_constants import DIAGONAL_IDENTITIES, VORTEX_IDENTITIES, SEED_LENGTH
 OUTPUT_PATH = Path("outputs/reports/seed_candidate_scan.md")
