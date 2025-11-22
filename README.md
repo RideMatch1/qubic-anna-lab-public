@@ -50,17 +50,67 @@ Should show: `bdee333b4006c1b7ab24a0dc61de76b60210c2db7bd8822c50e8509aff907c45`
 ```
 
 **Step 6: View Results**
-- Initial identities: See `FOUND_IDENTITIES.md`
-- Sample data: See `100_SEEDS_AND_IDENTITIES.md` (100 seeds with real IDs)
-- Complete database: See `outputs/analysis/complete_mapping_database.json` (23,765 seeds, ~50MB)
+
+After running the verification script, you'll find results in several locations:
+
+**Verification Summary:**
+- `verification_complete.txt` - Complete verification summary with hash (created after running `./run_all_verifications.sh`)
+
+**Extracted Identities:**
+- `FOUND_IDENTITIES.md` - Initial 8 identities discovered from the matrix
+- `outputs/reports/base26_identity_report.md` - Detailed report of 4 diagonal identities
+- `outputs/reports/9_vortex_identity_report.md` - Detailed report of 4 vortex identities
+- `outputs/plots/base26_identity_paths.png` - Visualization of diagonal extraction paths
+- `outputs/plots/9_vortex_paths.png` - Visualization of vortex extraction paths
+
+**Sample Data (100 Seeds):**
+- `100_SEEDS_AND_IDENTITIES.md` - Human-readable table with 100 seeds and their identities
+- `100_seeds_and_identities.json` - Machine-readable JSON format
+
+**Complete Database (23,765 Seeds):**
+- `outputs/analysis/complete_mapping_database.json` - Complete mapping database (~50MB)
+- `MAPPING_DATABASE_SUMMARY.md` - Summary statistics
+- `ALL_23765_SEEDS_SUMMARY.md` - Complete seeds database summary
+- `IDENTITY_DISCREPANCY_ANALYSIS.md` - Detailed discrepancy analysis
+
+**Verification Reports:**
+- `outputs/reports/control_group_report.md` - Random matrix control group test results
+- `outputs/reports/statistical_significance.md` - Statistical significance analysis
+- `outputs/reports/statistical_significance.json` - Machine-readable statistics
 
 ### Quick Commands
 
-1. **Verify the matrix file**: `shasum -a 256 data/anna-matrix/Anna_Matrix.xlsx` (should be `bdee333b...`)
-2. **Run verification**: `./run_all_verifications.sh`
-3. **Check identities**: See `FOUND_IDENTITIES.md` for initial 8 identities
-4. **View sample data**: See `100_SEEDS_AND_IDENTITIES.md` for 100 seeds with real IDs
-5. **Complete database**: See `outputs/analysis/complete_mapping_database.json` (23,765 seeds, ~50MB)
+1. **Verify the matrix file**: 
+   ```bash
+   shasum -a 256 data/anna-matrix/Anna_Matrix.xlsx
+   ```
+   Should show: `bdee333b4006c1b7ab24a0dc61de76b60210c2db7bd8822c50e8509aff907c45`
+
+2. **Run full verification**: 
+   ```bash
+   ./run_all_verifications.sh
+   ```
+   This will:
+   - Verify matrix file integrity
+   - Extract identities (diagonal and vortex patterns)
+   - Run control group test (200 random matrices)
+   - Calculate statistical significance
+   - Attempt on-chain verification (if Docker is available)
+   - Generate verification summary
+
+3. **Check results**:
+   - Verification summary: `verification_complete.txt`
+   - Initial identities: `FOUND_IDENTITIES.md`
+   - Detailed reports: `outputs/reports/`
+   - Visualizations: `outputs/plots/`
+
+4. **View sample data**: 
+   - `100_SEEDS_AND_IDENTITIES.md` - 100 seeds with real IDs
+   - `100_seeds_and_identities.json` - Machine-readable format
+
+5. **Complete database**: 
+   - `outputs/analysis/complete_mapping_database.json` - 23,765 seeds (~50MB)
+   - `MAPPING_DATABASE_SUMMARY.md` - Summary statistics
 
 ---
 
@@ -290,12 +340,22 @@ shasum -a 256 data/anna-matrix/Anna_Matrix.xlsx
 ```
 
 **What this script does:**
-1. Verifies matrix file integrity (checks SHA256 hash)
-2. Extracts identities from matrix (diagonal and vortex patterns)
-3. Runs control group test (compares with random matrices)
-4. Calculates statistical significance
-5. Performs on-chain verification (if Docker is available)
-6. Generates verification report
+1. **Step 1**: Verifies matrix file integrity (checks SHA256 hash)
+2. **Step 2**: Extracts identities from matrix using diagonal patterns (4 identities)
+3. **Step 3**: Extracts identities from matrix using vortex patterns (4 identities)
+4. **Step 4**: Runs control group test (200 random matrices, 0 hits expected)
+5. **Step 5**: Calculates statistical significance of findings
+6. **Step 6**: Performs on-chain verification via Docker (if available)
+7. **Step 7**: Generates verification summary file (`verification_complete.txt`)
+
+**Output files created:**
+- `verification_complete.txt` - Complete verification summary with hash
+- `outputs/reports/base26_identity_report.md` - Diagonal identities report
+- `outputs/reports/9_vortex_identity_report.md` - Vortex identities report
+- `outputs/reports/control_group_report.md` - Control group test results
+- `outputs/reports/statistical_significance.md` - Statistical analysis
+- `outputs/plots/base26_identity_paths.png` - Diagonal extraction visualization
+- `outputs/plots/9_vortex_paths.png` - Vortex extraction visualization
 
 **Dependencies:**
 - **Python 3.6+** is required (check with `python3 --version`)

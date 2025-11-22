@@ -76,8 +76,8 @@ if command -v docker &> /dev/null; then
     echo -e "${YELLOW}Step 6: On-chain verification (Docker)...${NC}"
     if docker images | grep -q qubic-proof; then
         docker run --rm -v "$PWD":/workspace -w /workspace qubic-proof \
-            python scripts/verify/rpc_check.py || {
-            echo -e "${YELLOW}Warning: RPC check failed (network issue?)${NC}"
+            env PYTHONPATH=/workspace python scripts/verify/rpc_check.py || {
+            echo -e "${YELLOW}Warning: RPC check failed (network issue or Docker setup)${NC}"
         }
         echo -e "${GREEN}✓ On-chain verification complete${NC}"
     else
@@ -85,10 +85,18 @@ if command -v docker &> /dev/null; then
         docker build -f Dockerfile.qubipy -t qubic-proof . || {
             echo -e "${YELLOW}Warning: Docker build failed${NC}"
         }
+        if docker images | grep -q qubic-proof; then
+            docker run --rm -v "$PWD":/workspace -w /workspace qubic-proof \
+                env PYTHONPATH=/workspace python scripts/verify/rpc_check.py || {
+                echo -e "${YELLOW}Warning: RPC check failed (network issue?)${NC}"
+            }
+            echo -e "${GREEN}✓ On-chain verification complete${NC}"
+        fi
     fi
     echo ""
 else
     echo -e "${YELLOW}Skipping on-chain verification (Docker not available)${NC}"
+    echo -e "${YELLOW}Note: On-chain verification requires Docker and QubiPy library${NC}"
     echo ""
 fi
 

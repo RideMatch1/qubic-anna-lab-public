@@ -18,6 +18,12 @@ Outputs:
 from qubipy.rpc import rpc_client
 import json
 from datetime import datetime
+import sys
+from pathlib import Path
+
+# Add project root to Python path
+project_root = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(project_root))
 
 # Import identities from single source of truth
 from scripts.core.identity_constants import DIAGONAL_IDENTITIES, VORTEX_IDENTITIES
