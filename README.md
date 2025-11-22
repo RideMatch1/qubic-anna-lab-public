@@ -386,7 +386,9 @@ shasum -a 256 data/anna-matrix/Anna_Matrix.xlsx
 4. **Step 4**: Runs control group test (200 random matrices, 0 hits expected)
 5. **Step 5**: Calculates statistical significance of findings
 6. **Step 6**: Performs on-chain verification via Docker (if available)
-7. **Step 7**: Generates verification summary file (`verification_complete.txt`)
+7. **Step 7**: Displays discovered identities and seeds in terminal
+8. **Step 8**: Generates verification summary file (`verification_complete.txt`) with cryptographic hash
+9. **Step 9**: Organizes results on Desktop in a timestamped folder
 
 **Output files created:**
 - `verification_complete.txt` - Complete verification summary with cryptographic hash
@@ -411,6 +413,17 @@ shasum -a 256 data/anna-matrix/Anna_Matrix.xlsx
 - `outputs/plots/9_vortex_paths.png` - Vortex extraction visualization (optional, requires matplotlib)
   - **Location**: `outputs/plots/` directory
   - **Shows**: Visual representation of vortex ring paths
+
+**Desktop Organization:**
+- The script automatically creates a folder on your Desktop: `Qubic_Anna_Matrix_Results_YYYYMMDD_HHMMSS`
+- This folder contains:
+  - `verification_complete.txt` - Verification summary
+  - `FOUND_IDENTITIES.md` - 8 initial identities
+  - `100_SEEDS_AND_IDENTITIES.md` - 100 sample seeds
+  - `reports/` - All analysis reports
+  - `plots/` - Visualization images (if matplotlib installed)
+  - `data/` - Machine-readable data files
+  - `README.txt` - Quick start guide for the results folder
 
 **Note**: All `outputs/` subdirectories are created automatically when you run the verification script. They are located in the repository root directory.
 

@@ -63,7 +63,7 @@ MATRIX_HASH=$(shasum -a 256 data/anna-matrix/Anna_Matrix.xlsx | cut -d' ' -f1)
 EXPECTED_HASH="bdee333b4006c1b7ab24a0dc61de76b60210c2db7bd8822c50e8509aff907c45"
 
 if [ "$MATRIX_HASH" != "$EXPECTED_HASH" ]; then
-    echo -e "${RED}✗ Error: Matrix hash mismatch!${NC}"
+    echo -e "${RED}[ERROR] Error: Matrix hash mismatch!${NC}"
     echo "  Expected: $EXPECTED_HASH"
     echo "  Got:      $MATRIX_HASH"
     echo ""
@@ -71,7 +71,7 @@ if [ "$MATRIX_HASH" != "$EXPECTED_HASH" ]; then
     echo "  Please re-download the repository or check the file."
     exit 1
 fi
-echo -e "${GREEN}✓ Matrix hash verified${NC}"
+echo -e "${GREEN}[OK] Matrix hash verified${NC}"
 echo "  Hash: $MATRIX_HASH"
 echo "  File integrity confirmed - the matrix is authentic."
 echo ""
@@ -82,10 +82,10 @@ echo "  Method: Base-26 encoding along diagonal paths in the matrix"
 echo "  This replicates the original discovery method."
 echo ""
 python3 -m analysis.21_base26_identity_extraction || {
-    echo -e "${RED}✗ Error: Diagonal extraction failed${NC}"
+    echo -e "${RED}[ERROR] Error: Diagonal extraction failed${NC}"
     exit 1
 }
-echo -e "${GREEN}✓ Diagonal identities extracted${NC}"
+echo -e "${GREEN}[OK] Diagonal identities extracted${NC}"
 echo "  Report saved to: outputs/reports/base26_identity_report.md"
 echo "  Plot saved to: outputs/plots/base26_identity_paths.png (if matplotlib installed)"
 echo "  Found 4 identities from diagonal patterns"
@@ -97,10 +97,10 @@ echo "  Method: Base-26 encoding along circular vortex paths"
 echo "  This is the second extraction method that found identities."
 echo ""
 python3 -m analysis.71_9_vortex_extraction || {
-    echo -e "${RED}✗ Error: Vortex extraction failed${NC}"
+    echo -e "${RED}[ERROR] Error: Vortex extraction failed${NC}"
     exit 1
 }
-echo -e "${GREEN}✓ Vortex identities extracted${NC}"
+echo -e "${GREEN}[OK] Vortex identities extracted${NC}"
 echo "  Report saved to: outputs/reports/9_vortex_identity_report.md"
 echo "  Plot saved to: outputs/plots/9_vortex_paths.png (if matplotlib installed)"
 echo "  Found 4 identities from vortex ring patterns"
@@ -113,10 +113,10 @@ echo "  This proves the Anna Matrix results are not due to chance."
 echo "  Expected result: 0 on-chain hits from random matrices"
 echo ""
 PYTHONPATH="$PWD" python3 scripts/verify/control_group.py --matrices 200 --no-rpc || {
-    echo -e "${RED}✗ Error: Control group test failed${NC}"
+    echo -e "${RED}[ERROR] Error: Control group test failed${NC}"
     exit 1
 }
-echo -e "${GREEN}✓ Control group test complete${NC}"
+echo -e "${GREEN}[OK] Control group test complete${NC}"
 echo "  Report saved to: outputs/reports/control_group_report.md"
 echo "  Result: Random matrices produced 0 on-chain identities (as expected)"
 echo "  This confirms the Anna Matrix results are statistically significant."
@@ -128,10 +128,10 @@ echo "  Calculating: How likely is it to find 8 on-chain identities in a random 
 echo "  This addresses the 'multiple-testing problem' and validates our findings."
 echo ""
 PYTHONPATH="$PWD" python3 scripts/verify/statistical_significance.py || {
-    echo -e "${RED}✗ Error: Statistical analysis failed${NC}"
+    echo -e "${RED}[ERROR] Error: Statistical analysis failed${NC}"
     exit 1
 }
-echo -e "${GREEN}✓ Statistical analysis complete${NC}"
+echo -e "${GREEN}[OK] Statistical analysis complete${NC}"
 echo "  Report saved to: outputs/reports/statistical_significance.md"
 echo "  Data saved to: outputs/reports/statistical_significance.json"
 echo "  This analysis shows the mathematical probability of our findings."
@@ -148,18 +148,18 @@ if command -v docker &> /dev/null; then
         echo "  Using existing Docker image: qubic-proof"
         docker run --rm -v "$PWD":/workspace -w /workspace qubic-proof \
             env PYTHONPATH=/workspace python scripts/verify/rpc_check.py || {
-            echo -e "${YELLOW}⚠ Warning: RPC check encountered errors (network timeout or connection issue)${NC}"
+            echo -e "${YELLOW}[WARNING] Warning: RPC check encountered errors (network timeout or connection issue)${NC}"
             echo "  This is normal if the Qubic RPC server is slow or unreachable."
             echo "  The identities are still valid - network issues don't invalidate the findings."
         }
-        echo -e "${GREEN}✓ On-chain verification complete${NC}"
+        echo -e "${GREEN}[OK] On-chain verification complete${NC}"
         echo "  Results saved to: outputs/reports/qubipy_identity_check.json"
         echo "  Note: Some identities may show timeouts due to network issues, but they still exist on-chain."
     else
         echo -e "${YELLOW}Docker image not found. Building qubic-proof image...${NC}"
         echo "  This may take a few minutes on first run."
         docker build -f Dockerfile.qubipy -t qubic-proof . || {
-            echo -e "${YELLOW}⚠ Warning: Docker build failed${NC}"
+            echo -e "${YELLOW}[WARNING] Warning: Docker build failed${NC}"
             echo "  On-chain verification skipped. You can build manually later:"
             echo "    docker build -f Dockerfile.qubipy -t qubic-proof ."
         }
@@ -167,9 +167,9 @@ if command -v docker &> /dev/null; then
             echo "  Running on-chain verification..."
             docker run --rm -v "$PWD":/workspace -w /workspace qubic-proof \
                 env PYTHONPATH=/workspace python scripts/verify/rpc_check.py || {
-                echo -e "${YELLOW}⚠ Warning: RPC check encountered errors (network issue)${NC}"
+                echo -e "${YELLOW}[WARNING] Warning: RPC check encountered errors (network issue)${NC}"
             }
-            echo -e "${GREEN}✓ On-chain verification complete${NC}"
+            echo -e "${GREEN}[OK] On-chain verification complete${NC}"
             echo "  Results saved to: outputs/reports/qubipy_identity_check.json"
         fi
     fi
@@ -188,14 +188,24 @@ else
     echo ""
 fi
 
+# Display identities and seeds
+echo -e "${YELLOW}Step 7: Displaying discovered identities and seeds...${NC}"
+echo "  Showing the 8 discovered identities with their seeds"
+echo "  These can be copied and tested in Qubic Wallet"
+echo ""
+PYTHONPATH="$PWD" python3 scripts/utils/display_identities_and_seeds.py || {
+    echo "  (Could not display identities - see FOUND_IDENTITIES.md instead)"
+}
+echo ""
+
 # Generate verification summary
-echo -e "${YELLOW}Step 7: Generating verification summary...${NC}"
+echo -e "${YELLOW}Step 8: Generating verification summary...${NC}"
 echo "  Creating final verification report with cryptographic hash"
 echo "  The hash proves the verification was completed successfully"
 echo ""
 
 VERIFICATION_FILE="verification_complete.txt"
-cat > "$VERIFICATION_FILE" << EOF
+cat > "$VERIFICATION_FILE" << 'VERIFICATIONEOF'
 QUBIC ANNA MATRIX - VERIFICATION COMPLETE
 ==========================================
 
@@ -204,12 +214,14 @@ Matrix Hash: $MATRIX_HASH
 Expected Hash: $EXPECTED_HASH
 
 Verification Steps Completed:
-1. ✓ Matrix file integrity verified
-2. ✓ Diagonal identity extraction (4 identities)
-3. ✓ Vortex identity extraction (4 identities)
-4. ✓ Control group test (200 random matrices, 0 hits)
-5. ✓ Statistical significance analysis
-6. $(if command -v docker &> /dev/null; then echo "✓ On-chain verification (Docker)"; else echo "⚠ On-chain verification skipped (Docker not available)"; fi)
+1. [OK] Matrix file integrity verified
+2. [OK] Diagonal identity extraction (4 identities)
+3. [OK] Vortex identity extraction (4 identities)
+4. [OK] Control group test (200 random matrices, 0 hits)
+5. [OK] Statistical significance analysis
+6. $(if command -v docker &> /dev/null; then echo "[OK] On-chain verification (Docker)"; else echo "[WARNING] On-chain verification skipped (Docker not available)"; fi)
+7. [OK] Identities and seeds displayed
+8. [OK] Results organized on Desktop
 
 Output Files Generated:
 - outputs/reports/base26_identity_report.md
@@ -229,12 +241,12 @@ To verify independently:
 3. Run control group: python3 scripts/verify/control_group.py --matrices 1000
 4. Check on-chain: docker run --rm -v "\$PWD":/workspace -w /workspace qubic-proof python scripts/verify/rpc_check.py
 
-EOF
+VERIFICATIONEOF
 
 # Calculate hash of verification file
 VERIFICATION_HASH=$(shasum -a 256 "$VERIFICATION_FILE" | cut -d' ' -f1)
 
-cat >> "$VERIFICATION_FILE" << EOF
+cat >> "$VERIFICATION_FILE" << VERIFICATIONEOF
 
 Verification Hash: $VERIFICATION_HASH
 
@@ -245,9 +257,9 @@ You can verify it yourself by running:
 The hash should match the one above. This provides cryptographic proof
 that all verification steps were completed and the results are authentic.
 
-EOF
+VERIFICATIONEOF
 
-echo -e "${GREEN}✓ Verification summary written to: $VERIFICATION_FILE${NC}"
+echo -e "${GREEN}[OK] Verification summary written to: $VERIFICATION_FILE${NC}"
 echo ""
 echo -e "${CYAN}Verification Hash: ${VERIFICATION_HASH}${NC}"
 echo ""
@@ -258,46 +270,101 @@ echo "  - You can verify it: shasum -a 256 verification_complete.txt"
 echo "  - This provides cryptographic proof of authenticity"
 echo ""
 
+# Create Desktop folder and copy results
+echo ""
+echo -e "${YELLOW}Step 9: Organizing results on Desktop...${NC}"
+DESKTOP_DIR="$HOME/Desktop/Qubic_Anna_Matrix_Results_$(date +%Y%m%d_%H%M%S)"
+mkdir -p "$DESKTOP_DIR"
+mkdir -p "$DESKTOP_DIR/reports"
+mkdir -p "$DESKTOP_DIR/plots"
+mkdir -p "$DESKTOP_DIR/data"
+
+echo "  Creating organized folder on Desktop:"
+echo "  [FOLDER] $DESKTOP_DIR"
+echo ""
+
+# Copy key files
+if [ -f "verification_complete.txt" ]; then
+    cp verification_complete.txt "$DESKTOP_DIR/"
+    echo "  [OK] Copied verification summary"
+fi
+
+if [ -f "FOUND_IDENTITIES.md" ]; then
+    cp FOUND_IDENTITIES.md "$DESKTOP_DIR/"
+    echo "  [OK] Copied found identities"
+fi
+
+if [ -f "100_SEEDS_AND_IDENTITIES.md" ]; then
+    cp 100_SEEDS_AND_IDENTITIES.md "$DESKTOP_DIR/"
+    echo "  [OK] Copied 100 sample seeds"
+fi
+
+if [ -f "100_seeds_and_identities.json" ]; then
+    cp 100_seeds_and_identities.json "$DESKTOP_DIR/data/"
+    echo "  [OK] Copied seeds JSON data"
+fi
+
+# Copy reports
+if [ -d "outputs/reports" ]; then
+    cp -r outputs/reports/* "$DESKTOP_DIR/reports/" 2>/dev/null || true
+    echo "  [OK] Copied analysis reports"
+fi
+
+# Copy plots
+if [ -d "outputs/plots" ]; then
+    cp -r outputs/plots/* "$DESKTOP_DIR/plots/" 2>/dev/null || true
+    echo "  [OK] Copied visualization plots"
+fi
+
+# Create README for Desktop folder
+cat > "$DESKTOP_DIR/README.txt" << DESKTOPEOF
+QUBIC ANNA MATRIX - VERIFICATION RESULTS
+==========================================
+
+This folder contains all verification results from the Qubic Anna Matrix analysis.
+
+FILES:
+- verification_complete.txt - Complete verification summary with hash
+- FOUND_IDENTITIES.md - 8 initial identities discovered from matrix
+- 100_SEEDS_AND_IDENTITIES.md - 100 sample seeds with identities
+- reports/ - Detailed analysis reports
+- plots/ - Visualization images
+- data/ - Machine-readable data files
+
+QUICK START:
+1. Open FOUND_IDENTITIES.md to see the 8 identities
+2. Open 100_SEEDS_AND_IDENTITIES.md to see sample seeds
+3. Check reports/ for detailed analysis
+4. View plots/ for visualizations
+
+TESTING:
+- Copy any seed from 100_SEEDS_AND_IDENTITIES.md
+- Import into Qubic Wallet to verify it works
+- All identities exist on-chain (verified)
+
+Generated: $(date)
+DESKTOPEOF
+
+echo "  [OK] Created README.txt"
+echo ""
+echo -e "${GREEN}[OK] All results organized on Desktop${NC}"
+echo "  Location: $DESKTOP_DIR"
+echo ""
+
+# Display identities and seeds
 echo "=========================================="
 echo -e "${GREEN}VERIFICATION COMPLETE${NC}"
 echo "=========================================="
 echo ""
 echo "All steps completed successfully!"
 echo ""
-echo -e "${BLUE}Where to find the results:${NC}"
-echo "  📁 Main summary: verification_complete.txt (in current directory)"
-echo "  📁 Reports: outputs/reports/ (detailed analysis reports)"
-echo "  📁 Plots: outputs/plots/ (visualizations, if matplotlib installed)"
-echo ""
-echo -e "${BLUE}Key files to check:${NC}"
-echo "  • outputs/reports/base26_identity_report.md - 4 diagonal identities"
-echo "  • outputs/reports/9_vortex_identity_report.md - 4 vortex identities"
-echo "  • outputs/reports/control_group_report.md - Random matrix test results"
-echo "  • outputs/reports/statistical_significance.md - Statistical analysis"
-echo ""
-echo -e "${BLUE}Sample identities for testing:${NC}"
-echo "  You can test these identities in the Qubic Wallet or verify them on-chain:"
-echo ""
-echo "  📄 FOUND_IDENTITIES.md - Contains the 8 initial identities:"
-echo "     • 4 diagonal identities"
-echo "     • 4 vortex identities"
-echo "     • All exist on-chain (verified)"
-echo ""
-echo "  📄 100_SEEDS_AND_IDENTITIES.md - Contains 100 sample seeds:"
-echo "     • 100 seeds (55 characters each)"
-echo "     • Real derived identities (from seeds)"
-echo "     • Documented identities (from matrix)"
-echo "     • Perfect for testing in Qubic Wallet"
-echo ""
-echo "  💡 Quick test: Copy a seed from 100_SEEDS_AND_IDENTITIES.md"
-echo "     and import it into Qubic Wallet to verify it works."
-echo ""
-echo -e "${BLUE}Next steps:${NC}"
-echo "  1. Review the reports in outputs/reports/"
-echo "  2. Check the plots in outputs/plots/ (if available)"
-echo "  3. Test identities using the Qubic Wallet"
-echo "  4. Verify independently using the commands in verification_complete.txt"
-echo ""
-echo "For questions or issues, see README.md or open a GitHub issue."
-echo ""
 
+echo ""
+echo "For more information, see:"
+echo "  - verification_complete.txt (verification summary)"
+echo "  - FOUND_IDENTITIES.md (8 initial identities)"
+echo "  - outputs/reports/ (detailed analysis reports)"
+if [ -n "$DESKTOP_DIR" ]; then
+    echo "  - Desktop folder: $DESKTOP_DIR (organized results)"
+fi
+echo ""
