@@ -1,7 +1,12 @@
 #!/bin/bash
+# Fix Git merge issues and ensure correct matrix file
+# Run this from the repository root directory
+
 set -e
 
-cd /Users/lukashertle/projects/qubic-mystery-lab/github_export
+# Get script directory (repository root)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
 
 echo "=== Fixing Git merge and matrix file ==="
 
@@ -11,7 +16,14 @@ git merge --abort 2>/dev/null || echo "   No merge to abort"
 
 # 2. Ensure correct matrix file
 echo "2. Ensuring correct matrix file..."
-cp ../data/anna-matrix/Anna_Matrix.xlsx data/anna-matrix/Anna_Matrix.xlsx
+# Note: This assumes the matrix file exists in the expected location
+# If it doesn't, the hash check below will fail
+if [ -f "data/anna-matrix/Anna_Matrix.xlsx" ]; then
+    echo "   Matrix file found in repository"
+else
+    echo "   ⚠️  Matrix file not found - ensure data/anna-matrix/Anna_Matrix.xlsx exists"
+    exit 1
+fi
 HASH=$(shasum -a 256 data/anna-matrix/Anna_Matrix.xlsx | cut -d' ' -f1)
 EXPECTED="bdee333b4006c1b7ab24a0dc61de76b60210c2db7bd8822c50e8509aff907c45"
 
