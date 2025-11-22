@@ -18,7 +18,11 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import List, Sequence, Tuple
 
-import matplotlib.pyplot as plt
+try:
+    import matplotlib.pyplot as plt
+    HAS_MATPLOTLIB = True
+except ImportError:
+    HAS_MATPLOTLIB = False
 import numpy as np
 
 from analysis.utils.data_loader import load_anna_matrix, ensure_directory
@@ -120,6 +124,10 @@ def extract_rings(matrix: np.ndarray) -> List[RingExtraction]:
     return results
 
 def _plot_ring_paths(matrix: np.ndarray, extractions: Sequence[RingExtraction], out_path: Path) -> None:
+    if not HAS_MATPLOTLIB:
+        print(f"[9-vortex] ⚠ Skipping plot generation (matplotlib not available)")
+        return
+    
     ensure_directory(out_path.parent)
     fig, axes = plt.subplots(2, 2, figsize=(10, 10))
     axes = axes.flatten()

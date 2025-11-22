@@ -10,6 +10,52 @@ This repository documents the complete research journey from initial discovery t
 
 ## Quick Start
 
+### For Beginners
+
+**Step 1: Open Terminal**
+- **Mac**: Press `Cmd + Space`, type "Terminal", press Enter
+- **Windows**: Press `Win + R`, type "cmd", press Enter
+- **Linux**: Press `Ctrl + Alt + T`
+
+**Step 2: Clone the Repository**
+```bash
+git clone https://github.com/RideMatch1/qubic-anna-lab-public.git
+cd qubic-anna-lab-public
+```
+
+**Step 3: Install Python Dependencies (Optional)**
+- **What is pip?** `pip` is Python's package installer. It comes with Python 3.4+.
+- **Check if you have pip**: Type `pip --version` or `pip3 --version` in terminal
+- **If pip is not found**: 
+  - **Mac/Linux**: `python3 -m ensurepip --upgrade`
+  - **Windows**: Python usually includes pip automatically
+- **Install dependencies** (optional - only needed for plots):
+```bash
+pip install -r requirements.txt
+# or if that doesn't work:
+pip3 install -r requirements.txt
+```
+
+**Note**: The extraction scripts work **without** installing dependencies. Dependencies are only needed for visualization plots.
+
+**Step 4: Verify the Matrix File**
+```bash
+shasum -a 256 data/anna-matrix/Anna_Matrix.xlsx
+```
+Should show: `bdee333b4006c1b7ab24a0dc61de76b60210c2db7bd8822c50e8509aff907c45`
+
+**Step 5: Run Verification**
+```bash
+./run_all_verifications.sh
+```
+
+**Step 6: View Results**
+- Initial identities: See `FOUND_IDENTITIES.md`
+- Sample data: See `100_SEEDS_AND_IDENTITIES.md` (100 seeds with real IDs)
+- Complete database: See `outputs/analysis/complete_mapping_database.json` (23,765 seeds, ~50MB)
+
+### Quick Commands
+
 1. **Verify the matrix file**: `shasum -a 256 data/anna-matrix/Anna_Matrix.xlsx` (should be `bdee333b...`)
 2. **Run verification**: `./run_all_verifications.sh`
 3. **Check identities**: See `FOUND_IDENTITIES.md` for initial 8 identities
@@ -242,6 +288,25 @@ shasum -a 256 data/anna-matrix/Anna_Matrix.xlsx
 ```bash
 ./run_all_verifications.sh
 ```
+
+**What this script does:**
+1. Verifies matrix file integrity (checks SHA256 hash)
+2. Extracts identities from matrix (diagonal and vortex patterns)
+3. Runs control group test (compares with random matrices)
+4. Calculates statistical significance
+5. Performs on-chain verification (if Docker is available)
+6. Generates verification report
+
+**Dependencies:**
+- **Python 3.6+** is required (check with `python3 --version`)
+- **Dependencies are optional**: The extraction scripts work without installing anything
+- **For visualization plots only**: Install with `pip install -r requirements.txt` (or `pip3 install -r requirements.txt`)
+- **What is pip?** `pip` is Python's package installer. If you don't have it, the scripts still work - you just won't get the plot images.
+
+**If you get "ModuleNotFoundError":**
+- The scripts will still extract identities and generate reports
+- Only the visualization plots will be skipped
+- This is normal and expected if you haven't installed dependencies
 
 This script:
 1. Verifies matrix file integrity

@@ -18,7 +18,11 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable, List, Sequence, Tuple
 
-import matplotlib.pyplot as plt
+try:
+    import matplotlib.pyplot as plt
+    HAS_MATPLOTLIB = True
+except ImportError:
+    HAS_MATPLOTLIB = False
 import numpy as np
 
 from analysis.utils.data_loader import load_anna_matrix, ensure_directory
@@ -110,6 +114,10 @@ def extract_diagonal_identities(
     return results
 
 def _plot_paths(matrix: np.ndarray, records: Sequence[IdentityRecord], out_path: Path) -> None:
+    if not HAS_MATPLOTLIB:
+        print(f"[base26-identities] ⚠ Skipping plot generation (matplotlib not available)")
+        return
+    
     ensure_directory(out_path.parent)
     fig, axes = plt.subplots(2, 2, figsize=(10, 10))
     axes = axes.flatten()
