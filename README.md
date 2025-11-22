@@ -48,6 +48,22 @@ Everything here can be reproduced from the published Excel file (`data/anna-matr
 - **Cherry-picking**: We show successful methods, not all attempts that found nothing
 - **Logical inconsistency**: If intentional, why hide seeds in public scores? (See "Open Questions" below)
 
+## Recent Research Updates
+
+**Status**: Experimental / Active Research
+
+Recent analyses have explored additional aspects of the matrix structure:
+
+- **Qubic Stack Architecture**: Analysis of Anna's role in the 5-layer Qubic stack (see `outputs/derived/QUBIC_STACK_ANALYSIS.md`)
+- **Aigarth Framework**: Investigation of Aigarth Intelligent Tissue connection (see `outputs/derived/AIGARTH_PAPER_ANALYSIS.md`)
+- **Helix Gate Patterns**: 26,562 patterns found in matrix structure (see `outputs/reports/helix_gate_analysis_report.md`)
+- **Evolutionary Signatures**: Analysis of identity patterns suggesting evolutionary selection (see `outputs/reports/evolutionary_signatures_analysis_report.md`)
+- **26 Zero Values**: Analysis of "dark matter" control neurons (see `outputs/reports/26_zeros_dark_matter_analysis_report.md`)
+
+**Note**: These are preliminary findings from ongoing research. Independent verification is recommended. See `RESEARCH_UPDATE_2025_11_22.md` for detailed summary.
+
+**Important**: The matrix appears to be Aigarth Intelligent Tissue (ternary neural network weights), not encrypted data. This interpretation is based on repository analysis and statistical properties. However, this is still under investigation and requires further validation.
+
 **What we can prove**: The identities exist on-chain, they're reproducible from the matrix, and random matrices don't produce the same results. Whether this is intentional or coincidence is unknown.
 
 ---
