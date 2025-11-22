@@ -205,11 +205,21 @@ echo "  The hash proves the verification was completed successfully"
 echo ""
 
 VERIFICATION_FILE="verification_complete.txt"
-cat > "$VERIFICATION_FILE" << 'VERIFICATIONEOF'
+CURRENT_DATE=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+DOCKER_STATUS=""
+if command -v docker &> /dev/null; then
+    DOCKER_STATUS="[OK] On-chain verification (Docker)"
+    DOCKER_FILE="- outputs/reports/qubipy_identity_check.json"
+else
+    DOCKER_STATUS="[WARNING] On-chain verification skipped (Docker not available)"
+    DOCKER_FILE=""
+fi
+
+cat > "$VERIFICATION_FILE" << VERIFICATIONEOF
 QUBIC ANNA MATRIX - VERIFICATION COMPLETE
 ==========================================
 
-Date: $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+Date: $CURRENT_DATE
 Matrix Hash: $MATRIX_HASH
 Expected Hash: $EXPECTED_HASH
 
@@ -219,7 +229,7 @@ Verification Steps Completed:
 3. [OK] Vortex identity extraction (4 identities)
 4. [OK] Control group test (200 random matrices, 0 hits)
 5. [OK] Statistical significance analysis
-6. $(if command -v docker &> /dev/null; then echo "[OK] On-chain verification (Docker)"; else echo "[WARNING] On-chain verification skipped (Docker not available)"; fi)
+6. $DOCKER_STATUS
 7. [OK] Identities and seeds displayed
 8. [OK] Results organized on Desktop
 
@@ -231,7 +241,7 @@ Output Files Generated:
 - outputs/reports/statistical_significance.json
 - outputs/plots/base26_identity_paths.png (if matplotlib installed)
 - outputs/plots/9_vortex_paths.png (if matplotlib installed)
-$(if command -v docker &> /dev/null; then echo "- outputs/reports/qubipy_identity_check.json"; fi)
+$DOCKER_FILE
 
 All verification steps completed successfully.
 
@@ -239,7 +249,7 @@ To verify independently:
 1. Check matrix hash: shasum -a 256 data/anna-matrix/Anna_Matrix.xlsx
 2. Run extraction scripts: python3 -m analysis.21_base26_identity_extraction
 3. Run control group: python3 scripts/verify/control_group.py --matrices 1000
-4. Check on-chain: docker run --rm -v "\$PWD":/workspace -w /workspace qubic-proof python scripts/verify/rpc_check.py
+4. Check on-chain: docker run --rm -v "$(pwd)":/workspace -w /workspace qubic-proof python scripts/verify/rpc_check.py
 
 VERIFICATIONEOF
 
