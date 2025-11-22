@@ -27,8 +27,9 @@ client/
 qubic-cli/
 data/computor-data/
 *.ipynb_checkpoints/
-outputs/derived/
-outputs/derived/**
+# outputs/derived/ - Commented out to allow public analysis files
+# outputs/derived/**
+# Note: Specific analysis files are now tracked for public release
 github_export/
 *.checkpoint.json
 *_checkpoint.json
