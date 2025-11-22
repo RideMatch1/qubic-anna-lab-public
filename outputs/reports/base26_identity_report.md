@@ -25,5 +25,5 @@
 ## Notes
 
 - Each identity body (56 letters) comes from the diagonal walk inside one 32×32 window. I extracted these by walking diagonally through 4 different 32x32 blocks in the matrix.
-- Suffixes published by CFB do not match the KangarooTwelve checksum, so wallet validation fails if you try to use them directly. That's why I generated the auto-derived versions.
+- Suffixes published by CFB do not match the KangarooTwelve checksum, so wallet validation fails if used directly. Auto-derived versions were generated to address this.
 - Auto-derived variants keep the same public key but reintroduce a valid checksum for reference. The public key is what matters for on-chain verification.

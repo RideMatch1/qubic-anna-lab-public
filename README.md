@@ -60,18 +60,22 @@ After running the verification script, you'll find results in several locations:
 - `FOUND_IDENTITIES.md` - Initial 8 identities discovered from the matrix
 - `outputs/reports/base26_identity_report.md` - Detailed report of 4 diagonal identities
 - `outputs/reports/9_vortex_identity_report.md` - Detailed report of 4 vortex identities
-- `outputs/plots/base26_identity_paths.png` - Visualization of diagonal extraction paths
-- `outputs/plots/9_vortex_paths.png` - Visualization of vortex extraction paths
+- `outputs/plots/base26_identity_paths.png` - Visualization of diagonal extraction paths (created when running verification with matplotlib installed)
+- `outputs/plots/9_vortex_paths.png` - Visualization of vortex extraction paths (created when running verification with matplotlib installed)
+
+**Note**: Plot files are only created if matplotlib is installed. The extraction scripts work without them.
 
 **Sample Data (100 Seeds):**
 - `100_SEEDS_AND_IDENTITIES.md` - Human-readable table with 100 seeds and their identities
 - `100_seeds_and_identities.json` - Machine-readable JSON format
 
 **Complete Database (23,765 Seeds):**
-- `outputs/analysis/complete_mapping_database.json` - Complete mapping database (~50MB)
-- `MAPPING_DATABASE_SUMMARY.md` - Summary statistics
+- `MAPPING_DATABASE_SUMMARY.md` - Summary statistics of all 23,765 seeds
 - `ALL_23765_SEEDS_SUMMARY.md` - Complete seeds database summary
 - `IDENTITY_DISCREPANCY_ANALYSIS.md` - Detailed discrepancy analysis
+- `100_SEEDS_AND_IDENTITIES.md` - Sample of 100 seeds with real IDs (see above)
+
+**Note**: The complete mapping database (`complete_mapping_database.json`, ~50MB) is not included in this repository due to size. The summary files above contain all essential statistics and analysis. For the full dataset, see the research repository.
 
 **Verification Reports:**
 - `outputs/reports/control_group_report.md` - Random matrix control group test results
@@ -108,9 +112,10 @@ After running the verification script, you'll find results in several locations:
    - `100_SEEDS_AND_IDENTITIES.md` - 100 seeds with real IDs
    - `100_seeds_and_identities.json` - Machine-readable format
 
-5. **Complete database**: 
-   - `outputs/analysis/complete_mapping_database.json` - 23,765 seeds (~50MB)
-   - `MAPPING_DATABASE_SUMMARY.md` - Summary statistics
+5. **Complete database summaries**: 
+   - `MAPPING_DATABASE_SUMMARY.md` - Summary of 23,765 seeds mapping
+   - `ALL_23765_SEEDS_SUMMARY.md` - Complete seeds database summary
+   - `IDENTITY_DISCREPANCY_ANALYSIS.md` - Detailed discrepancy analysis
 
 ---
 
@@ -264,8 +269,8 @@ The matrix structure matches Aigarth Intelligent Tissue characteristics:
 **Files**: 
 - `FINAL_ANALYSIS_STATUS.md`
 - `IDENTITY_DISCREPANCY_ANALYSIS.md`
-- `MAPPING_DATABASE_SUMMARY.md`
-- `outputs/analysis/complete_mapping_database.json` (large file, ~50MB)
+- `MAPPING_DATABASE_SUMMARY.md` - Summary of complete mapping database
+- `ALL_23765_SEEDS_SUMMARY.md` - Complete seeds database summary
 
 ---
 
@@ -308,13 +313,11 @@ The matrix structure matches Aigarth Intelligent Tissue characteristics:
 
 ### Complete Database (23,765 Seeds)
 
-- **`outputs/analysis/complete_mapping_database.json`** - Complete mapping database:
+- **`MAPPING_DATABASE_SUMMARY.md`** - Summary of complete mapping database:
   - 23,765 seeds mapped to real identities
   - 23,765 documented identities from matrix
   - All mappings and statistics
-  - Large file (~50MB)
-
-- **`MAPPING_DATABASE_SUMMARY.md`** - Summary statistics and analysis
+  - Complete analysis and findings
 - **`ALL_23765_SEEDS_SUMMARY.md`** - Complete seeds database summary
 - **`IDENTITY_DISCREPANCY_ANALYSIS.md`** - Detailed discrepancy analysis
 - **`COMPLETE_DATA_INDEX.md`** - Index to all data files
@@ -354,8 +357,8 @@ shasum -a 256 data/anna-matrix/Anna_Matrix.xlsx
 - `outputs/reports/9_vortex_identity_report.md` - Vortex identities report
 - `outputs/reports/control_group_report.md` - Control group test results
 - `outputs/reports/statistical_significance.md` - Statistical analysis
-- `outputs/plots/base26_identity_paths.png` - Diagonal extraction visualization
-- `outputs/plots/9_vortex_paths.png` - Vortex extraction visualization
+- `outputs/plots/base26_identity_paths.png` - Diagonal extraction visualization (optional, requires matplotlib)
+- `outputs/plots/9_vortex_paths.png` - Vortex extraction visualization (optional, requires matplotlib)
 
 **Dependencies:**
 - **Python 3.6+** is required (check with `python3 --version`)
@@ -409,11 +412,9 @@ data/anna-matrix/           # Source Excel file (SHA256: bdee333b...)
 outputs/
   reports/                  # Analysis reports
   derived/                  # Derived data (JSON/Markdown)
-  analysis/                 # Complete mapping database and analysis
-    complete_mapping_database.json  # Full mapping (23,765 seeds, ~50MB)
+  analysis/                 # Analysis data (if needed)
 external_verifications/     # Independent verification results
 docs/
-  status/                   # Status and update files (moved from root)
   internal/                 # Internal documentation (validation, audit reports, etc.)
 ```
 
@@ -421,8 +422,8 @@ docs/
 
 - **`100_SEEDS_AND_IDENTITIES.md`** - Sample of 100 seeds with documented and real identities
 - **`100_seeds_and_identities.json`** - Machine-readable format
-- **`outputs/analysis/complete_mapping_database.json`** - Complete mapping of all 23,765 seeds (large file)
-- **`MAPPING_DATABASE_SUMMARY.md`** - Summary statistics
+- **`MAPPING_DATABASE_SUMMARY.md`** - Complete summary of all 23,765 seeds mapping
+- **`ALL_23765_SEEDS_SUMMARY.md`** - Complete seeds database summary
 - **`IDENTITY_DISCREPANCY_ANALYSIS.md`** - Detailed discrepancy analysis
 
 ---
@@ -510,7 +511,7 @@ We encourage independent verification. See `external_verifications/README.md` fo
 - Why seeds produce different identities than documented (100% mismatch rate)
 
 **Complete Data Available**:
-- All 23,765 seeds mapped to real identities: `outputs/analysis/complete_mapping_database.json`
+- All 23,765 seeds mapped to real identities: See `MAPPING_DATABASE_SUMMARY.md` and `ALL_23765_SEEDS_SUMMARY.md`
 - Sample of 100 seeds: `100_SEEDS_AND_IDENTITIES.md` and `100_seeds_and_identities.json`
 - Summary statistics: `MAPPING_DATABASE_SUMMARY.md`
 - Detailed analysis: `IDENTITY_DISCREPANCY_ANALYSIS.md`
@@ -529,7 +530,7 @@ We encourage independent verification. See `external_verifications/README.md` fo
 - **All identities have balance 0** - They exist but have no funds
 - **All findings are reproducible** - Use the scripts provided to verify independently
 - **Research is ongoing** - Findings may evolve as research continues
-- **Complete database is large** - `complete_mapping_database.json` is ~50MB
+- **Complete database summaries** - See `MAPPING_DATABASE_SUMMARY.md` and `ALL_23765_SEEDS_SUMMARY.md` for full statistics
 
 ---
 

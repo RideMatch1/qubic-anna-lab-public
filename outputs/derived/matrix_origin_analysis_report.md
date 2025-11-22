@@ -26,7 +26,7 @@ Trying to figure out if someone actually built this matrix intentionally or if i
 
 ### Base-26 Anomalies
 
-Some values appear more or less frequently than expected. If the matrix was truly random, we'd expect about 630 of each value (0-25). Here's what I found:
+Some values appear more or less frequently than expected. If the matrix was truly random, we'd expect about 630 of each value (0-25). Findings:
 
 - Value 0: 760 (expected: 630.2, Diff: 20.6%) - overrepresented
 - Value 1: 489 (expected: 630.2, Diff: 22.4%) - underrepresented
@@ -39,7 +39,7 @@ Some values appear more or less frequently than expected. If the matrix was trul
 - Value 9: 751 (expected: 630.2, Diff: 19.2%) - overrepresented
 - Value 10: 549 (expected: 630.2, Diff: 12.9%) - underrepresented
 
-24 values show >5% deviation from expected. That's more than you'd expect from pure randomness, but not conclusive proof of intentional construction.
+24 values show >5% deviation from expected. This is more than expected from pure randomness, but not conclusive proof of intentional construction.
 
 ## 2. Spatial Patterns (FACTS)
 

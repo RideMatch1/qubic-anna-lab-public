@@ -34,7 +34,7 @@ Different extraction patterns sample different parts of the matrix, so they have
 - **spiral**: 10.56
 - **l_shape**: 30.23 (also higher)
 
-The row_scan and l_shape patterns have noticeably higher means, which suggests they're sampling from a different part of the matrix. Whether that's meaningful or just random variation is unclear.
+The row_scan and l_shape patterns have noticeably higher means, which suggests they're sampling from a different part of the matrix. Whether this is meaningful or just random variation is unclear.
 
 ## OPEN QUESTIONS
 

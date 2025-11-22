@@ -22,9 +22,8 @@ This document provides an index to all publicly available data files in this rep
 
 - **`MAPPING_DATABASE_SUMMARY.md`** - Summary of complete mapping database
 - **`ALL_23765_SEEDS_SUMMARY.md`** - Complete seeds database summary
-- **`COMPLETE_MAPPING_SUMMARY.json`** - JSON summary statistics
 
-**Note**: The complete mapping database (`outputs/analysis/complete_mapping_database.json`) is large (~50MB) and contains all 23,765 seed-to-identity mappings.
+**Note**: The complete mapping database (`complete_mapping_database.json`, ~50MB) is not included in this repository due to size. The summary files above contain all essential statistics and analysis.
 
 ## Analysis Reports
 
@@ -69,7 +68,6 @@ This document provides an index to all publicly available data files in this rep
 ### JSON Files
 
 - **`100_seeds_and_identities.json`** - 100 seeds with documented and real identities
-- **`COMPLETE_MAPPING_SUMMARY.json`** - Summary statistics for all 23,765 seeds
 
 ### Markdown Files
 
@@ -77,7 +75,7 @@ All analysis reports and documentation are in Markdown format for easy reading.
 
 ## Access
 
-All files are in the `github_export/` directory. The complete mapping database is in `outputs/analysis/complete_mapping_database.json` (large file, ~50MB).
+All files are in the repository root. The complete mapping database (`complete_mapping_database.json`, ~50MB) is not included due to size. See summary files above.
 
 ## Verification
 

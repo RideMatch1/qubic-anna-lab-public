@@ -3,7 +3,7 @@
 Control run: generated purely random 128×128 matrices with the same value range as the Anna Matrix.
 Each matrix was processed with the same Base-26 diagonal extractor used for the actual discovery.
 
-I wanted to make sure the extraction method itself wasn't producing artifacts, so I ran it on random data.
+The extraction method was tested on random data to ensure it wasn't producing artifacts.
 
 - Matrices tested: 200
 - Identities generated: 800 (4 per matrix, same as Anna Matrix)

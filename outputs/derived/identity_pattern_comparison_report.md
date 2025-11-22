@@ -31,7 +31,7 @@ Some characters appear more often at the start of seeds than others:
 - `g`: 7x (3.9%)
 - `n`: 7x (3.9%)
 
-The 'a' at the start is interesting - 32 out of 180 seeds start with 'a'. That's way more than the ~7 you'd expect from random distribution (1/26 ≈ 3.8%). Whether that's meaningful or just a quirk of the extraction patterns, I don't know.
+The 'a' at the start appears frequently - 32 out of 180 seeds start with 'a'. This is more than the ~7 expected from random distribution (1/26 ≈ 3.8%). Whether this is meaningful or a quirk of the extraction patterns is unknown.
 
 ### Most frequent last characters
 - `a`: 18x (10.0%)

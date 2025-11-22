@@ -23,13 +23,14 @@ This repository has been organized for clarity:
 
 ### Data Files
 
-- `outputs/analysis/complete_mapping_database.json` - Complete mapping (23,765 seeds, ~50MB)
-- `outputs/reports/` - Analysis reports
-- `outputs/derived/` - Derived data and analyses
+- `outputs/reports/` - Analysis reports (created by verification scripts)
+- `outputs/derived/` - Derived data and analysis reports
+- `outputs/plots/` - Visualization plots (created if matplotlib installed)
+
+**Note**: The complete mapping database (`complete_mapping_database.json`, ~50MB) is not included in this repository due to size. See `MAPPING_DATABASE_SUMMARY.md` and `ALL_23765_SEEDS_SUMMARY.md` for summaries.
 
 ### Internal Documentation
 
-- `docs/status/` - Status and update files
 - `docs/internal/` - Internal documentation and audit reports
 
 ### Scripts and Tools
@@ -42,6 +43,6 @@ This repository has been organized for clarity:
 
 - **Start here**: `README.md`
 - **Sample data**: `100_SEEDS_AND_IDENTITIES.md`
-- **Complete database**: `outputs/analysis/complete_mapping_database.json`
+- **Complete database summaries**: `MAPPING_DATABASE_SUMMARY.md` and `ALL_23765_SEEDS_SUMMARY.md`
 - **Verification**: `./run_all_verifications.sh`
 

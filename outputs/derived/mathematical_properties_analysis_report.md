@@ -17,7 +17,7 @@ Checked which values in the matrix are prime numbers. Found:
 - **Primes found**: 31
 - **Prime ratio**: 24.0%
 
-That's about what you'd expect from random data - primes are distributed roughly according to the prime number theorem.
+This is approximately what would be expected from random data - primes are distributed roughly according to the prime number theorem.
 
 ### First 20 primes in matrix
 - 2
