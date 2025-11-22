@@ -19,6 +19,13 @@ from typing import Dict, List
 
 import numpy as np
 
+import sys
+from pathlib import Path
+
+# Add project root to path for imports
+project_root = Path(__file__).parent.parent.parent
+sys.path.insert(0, str(project_root))
+
 from analysis.utils.identity_tools import IDENTITY_BODY_LENGTH, IdentityRecord, base26_char, identity_from_body, public_key_from_identity
 
 OUTPUT_JSON = Path("outputs/reports/monte_carlo_simulation.json")
