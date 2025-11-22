@@ -10,8 +10,6 @@ This repository documents the complete research journey from initial discovery t
 
 ## Safety and Security
 
-**Verify everything yourself. Don't trust this document.**
-
 Before running any scripts:
 1. Read the code - all scripts are plain text files
 2. Check file hashes - verify integrity using SHA256
@@ -20,7 +18,7 @@ Before running any scripts:
 
 See `SECURITY.md` for verification steps and code review checklist.
 
-**Note**: Some virus scanners may flag Python scripts using cryptographic libraries. Review the code yourself to verify safety.
+**Note**: Some virus scanners may flag Python scripts using cryptographic libraries. Review the code yourself, use VirusTotal or any other antivirus tool if you are concerned. 
 
 ---
 
