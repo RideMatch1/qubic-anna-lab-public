@@ -8,7 +8,9 @@
 
 This repository documents the discovery of real Qubic identities and keys encoded in the Anna Matrix Excel file. These are actual on-chain identities that can be verified independently. We found valid keys and derived additional identities from them.
 
-**What we found**: Real Qubic identities (public keys) and valid seeds encoded in the matrix. These are actual cryptographic keys that exist on the Qubic blockchain. We found 8 identities directly in the matrix, and discovered that each one contains a valid seed that derives an additional on-chain identity. This is about finding real keys and identities, not about AI training.
+**What we found**: Real Qubic identities (public keys) and valid seeds encoded in the matrix. These are actual cryptographic keys that exist on the Qubic blockchain. We found 8 identities directly in the matrix, and discovered that each one contains a valid seed that derives an additional on-chain identity.
+
+**Important**: We found seeds and identities in the matrix. We created a signed message to prove the seeds are cryptographically functional. The message text itself was not found in the matrix - it was created by us to demonstrate functionality.
 
 ## What We Found
 
