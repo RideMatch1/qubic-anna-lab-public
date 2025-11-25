@@ -1,0 +1,30 @@
+# Random Matrix Control Group
+
+Control run: generated purely random 128×128 matrices with the same value range as the Anna Matrix.
+Each matrix was processed with the same Base-26 diagonal extractor used for the actual discovery.
+
+The extraction method was tested on random data to ensure it wasn't producing artifacts.
+
+- Matrices tested: 200
+- Identities generated: 800 (4 per matrix, same as Anna Matrix)
+- RPC checks: 0 (didn't check on-chain for this run, just structure)
+- RPC hits (should be 0): 0
+
+No identities from the control group existed on-chain. Anna Matrix results are not due to chance or some quirk of the extraction algorithm.
+
+<details><summary>Sample generated identities (first 12)</summary>
+
+1. `CWESTAOADPBTNWVEUPWAHZORMDOIFBWFXMRKDDDPVYHGPMQJNTBGMRJABYNF`
+2. `ICKRBNVQQYDTTDBJWVXXMMRCHIYUCQKODPJYXYAYFTMJFKNSTYNRNITJIZYK`
+3. `POHTQXNKJHUYVOQQMGCHADMKLYIBKZJREJQQRQMLTIPZXSFWTKSGLYUMFUNB`
+4. `MJIXZKCEHAYTRPOPRVHLEBDPNNPJXCAMRLBFNUBDXCLPBAONJMMKSRVVHHCT`
+5. `VDNGOMFSGUFUFEMSJJFHRZXGFBYVNRBHXMWATJDBJOZHMRCGIVUUZJDBCVKH`
+6. `UMCIADGZLQLQPOKGISSXLYTXSLBMSVRGWFFTDSZXKORUIYYQMOXMRCOVIIIV`
+7. `THHMMQNDJFKDPCKRFJRKCENNMJBNWMQIEOMAKOQGFPMZHNQEKNOXSTWTNLGS`
+8. `NUJXTDJLFYWBSLCBJADWNRLPJNZDFYSAUHIOOLEXOMVRLUJRIJFZBBICKEPU`
+9. `YMSJMUBZNQVIGSNWWCHBEHJLPWILUJCDHTYRECWZQVVFDUGKKHKQILGPEUHU`
+10. `YAQGZUSUGURRQKWVBGYPGHKBBGTMEDTUSMCKAPEGCKXUMHZPFZKGIQYGNAXV`
+11. `CBTVJVBWZRRCJKCPJOHBCWFXRRQVDQFNAMHCITZHEMPCLTGBKNMMPOIINVZW`
+12. `YNNUSJJKYKKOURBARPAQXCBBYPCWOPVOAOZOVFYSKGLIXRHEBLZDBCYTBZOW`
+
+</details>

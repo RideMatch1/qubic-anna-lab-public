@@ -1,0 +1,35 @@
+venv/
+venv-tx/
+__pycache__/
+*/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.DS_Store
+.env
+*.dll
+*.dylib
+*.so
+*.exe
+*.deps.json
+*.runtimeconfig.json
+*.pdb
+*.log
+*.tmp
+repos/
+DiscordChatExporter*
+createdump
+outputs/reports/*.csv
+outputs/reports/*.json
+outputs/reports/*.log
+client/
+qubic-cli/
+data/computor-data/
+*.ipynb_checkpoints/
+# outputs/derived/ - Commented out to allow public analysis files
+# outputs/derived/**
+# Note: Specific analysis files are now tracked for public release
+github_export/
+*.checkpoint.json
+*_checkpoint.json
