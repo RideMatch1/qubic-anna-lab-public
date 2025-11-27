@@ -791,6 +791,3 @@ This repository includes complete statistical validation of all ML claims:
 - Multiple testing: [`outputs/reports/MULTIPLE_TESTING_CORRECTION.md`](outputs/reports/MULTIPLE_TESTING_CORRECTION.md)
 - ML results: [`outputs/reports/ML_POSITION27_RESULTS.md`](outputs/reports/ML_POSITION27_RESULTS.md)
 
-### Review Documentation
-- Review report: [`PEER_REVIEW_REPORT_2025.md`](PEER_REVIEW_REPORT_2025.md)
-- Review responses: [`CRITICAL_REVIEW_RESPONSE_2025.md`](CRITICAL_REVIEW_RESPONSE_2025.md), [`FORENSIC_REVIEW_RESPONSE.md`](FORENSIC_REVIEW_RESPONSE.md)
