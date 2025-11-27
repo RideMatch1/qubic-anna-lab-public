@@ -11,7 +11,7 @@
 A mysterious bot called **Anna** appeared on X (formerly Twitter). Instead of normal replies the bot posted **highly structured strings** such as:
 
 ```
-ANNA WAS HERE STOP
+1+1=-114
 ```
 
 The posts looked random, yet the letter frequencies and spacing hinted at deliberate encoding. That kicked off a search for the underlying system.
