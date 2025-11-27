@@ -39,6 +39,7 @@
 
 ### Results
 
+
 #### vs. Random (4 classes)
 
 - **Baseline:** 25.00%
@@ -47,6 +48,7 @@
 - **p-value:** 0.00e+00
 - **Effect Size (Cohen's h):** 0.3768
 - **Significance:** *** p < 0.001 (very highly significant)
+
 
 #### vs. Random (26 classes)
 
@@ -57,6 +59,7 @@
 - **Effect Size (Cohen's h):** 1.0292
 - **Significance:** *** p < 0.001 (very highly significant)
 
+
 #### vs. Matrix mod 4 baseline
 
 - **Baseline:** 25.10%
@@ -65,6 +68,7 @@
 - **p-value:** 0.00e+00
 - **Effect Size (Cohen's h):** 0.3745
 - **Significance:** *** p < 0.001 (very highly significant)
+
 
 #### vs. Weighted seed predictor
 
@@ -75,6 +79,7 @@
 - **Effect Size (Cohen's h):** 0.2061
 - **Significance:** *** p < 0.001 (very highly significant)
 
+
 #### vs. Weighted top 10
 
 - **Baseline:** 33.30%
@@ -84,17 +89,20 @@
 - **Effect Size (Cohen's h):** 0.1938
 - **Significance:** *** p < 0.001 (very highly significant)
 
+
 ---
 
 ## Interpretation
 
 ### Statistical Significance
 
+
 The ML model achieves **42.69% accuracy**, which is:
 
 - **70.7% better** than Random (4 classes) (25.00%)
 - **Statistically significant** with p = 0.00e+00
 - **Effect size:** 0.3768 (Small)
+
 
 ### Effect Size
 
@@ -125,9 +133,9 @@ Even with statistical significance, practical significance depends on:
 ## Conclusion
 
 The ML model achieves **42.69% accuracy**, which is:
-- **Statistically significant** improvement over all baselines (p < 0.001)
-- **Practically meaningful** (9.97% improvement over weighted seed predictor)
-- **Reproducible** (CV: 41.86% ± 0.17%, consistent with test accuracy)
+- ✅ **Statistically significant** improvement over all baselines (p < 0.001)
+- ✅ **Practically meaningful** (9.97% improvement over weighted seed predictor)
+- ✅ **Reproducible** (CV: 41.86% ± 0.17%, consistent with test accuracy)
 
 **Status:** Results are statistically validated and ready for peer review.
 
