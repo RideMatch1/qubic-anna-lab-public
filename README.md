@@ -22,16 +22,6 @@ Before running any scripts:
 
 See `SECURITY.md` for verification steps and code review checklist.
 
-## Code Review & Validation
-
-This repository includes validation reports and review documentation:
-- `PEER_REVIEW_REPORT_2025.md` - Internal review report
-- `PEER_REVIEW_PROMPT.md` - Review checklist
-- `CRITICAL_REVIEW_RESPONSE_2025.md` - Response to review findings
-- `FORENSIC_REVIEW_RESPONSE.md` - Forensic review response
-
-**Note**: Some virus scanners may flag Python scripts using cryptographic libraries. Review the code yourself, use VirusTotal or any other antivirus tool if you are concerned. 
-
 ---
 
 ## Quick Start
