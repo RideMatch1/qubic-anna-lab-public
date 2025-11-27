@@ -30,7 +30,7 @@ This document provides an index to all publicly available data files in this rep
 ### Identity Discrepancy
 
 - **`IDENTITY_DISCREPANCY_ANALYSIS.md`** - Detailed analysis of discrepancy between documented and real identities
-- **`FINAL_ANALYSIS_STATUS.md`** - Current analysis status and findings
+- **`RESEARCH_OVERVIEW.md`** - Current research status and findings
 
 ### Pattern Analysis
 
@@ -61,7 +61,7 @@ This document provides an index to all publicly available data files in this rep
 ## Research Updates
 
 - **`RESEARCH_UPDATE_2025_11_22.md`** - Research update summary
-- **`FINAL_ANALYSIS_STATUS.md`** - Final analysis status
+- **`RESEARCH_OVERVIEW.md`** - Research overview and status
 
 ## Data Files Format
 
@@ -90,4 +90,3 @@ All identities can be verified on-chain using the scripts provided:
 - All identities are on-chain verified
 - All seeds are cryptographically functional
 - Research is ongoing and findings may evolve
-

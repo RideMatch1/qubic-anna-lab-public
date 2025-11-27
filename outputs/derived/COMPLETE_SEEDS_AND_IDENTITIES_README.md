@@ -2,7 +2,7 @@
 
 ## File: `complete_24846_seeds_to_real_ids_mapping.json`
 
-**Size:** ~7.7 MB  
+**Size:** ~7.7 MB 
 **Total Entries:** 23,765 identities with seeds
 
 ### What's Inside
@@ -19,11 +19,11 @@ This file contains **ALL discovered identities from the Anna Matrix** with their
 Each entry contains:
 ```json
 {
-  "seed": "aaaaaaaaaewamanayeyaaaaaywrlaebhiepesefaeejreqtremjchof",
-  "documented_identity": "AAAAAAAAAEWAMANAYEYAAAAAYWRLAEBHIEPESEFAEEJREQTREMJCHOFFIFHJ",
-  "real_identity": "HSISJEJOTMWHNBDGGBTEIYKHQLXBAGCUVTWNKMEHGDWCECFHVAGSTGLBOPKE",
-  "match": false,
-  "source": "checksum_identities_batch_0.json"
+ "seed": "aaaaaaaaaewamanayeyaaaaaywrlaebhiepesefaeejreqtremjchof",
+ "documented_identity": "AAAAAAAAAEWAMANAYEYAAAAAYWRLAEBHIEPESEFAEEJREQTREMJCHOFFIFHJ",
+ "real_identity": "HSISJEJOTMWHNBDGGBTEIYKHQLXBAGCUVTWNKMEHGDWCECFHVAGSTGLBOPKE",
+ "match": false,
+ "source": "checksum_identities_batch_0.json"
 }
 ```
 
@@ -34,10 +34,10 @@ Each entry contains:
 import json
 
 with open('complete_24846_seeds_to_real_ids_mapping.json') as f:
-    data = json.load(f)
+ data = json.load(f)
 
 # Access all results
-all_entries = data['results']  # 23,765 entries
+all_entries = data['results'] # 23,765 entries
 
 # Get statistics
 print(f"Total seeds: {data['total_seeds']}")
@@ -47,8 +47,8 @@ print(f"Match rate: {data['match_rate']:.2%}")
 
 # Find specific seed
 for entry in all_entries:
-    if entry['seed'] == 'your_seed_here':
-        print(f"Found: {entry['real_identity']}")
+ if entry['seed'] == 'your_seed_here':
+ print(f"Found: {entry['real_identity']}")
 ```
 
 **Import into Qubic Wallet:**
@@ -60,10 +60,10 @@ for entry in all_entries:
 ### Verification
 
 All identities in this file have been:
-- ✅ Extracted from the Anna Matrix
-- ✅ Derived using cryptographic functions
-- ✅ Verified on-chain (exist on Qubic blockchain)
-- ✅ Tested for wallet access
+- Extracted from the Anna Matrix
+- Derived using cryptographic functions
+- Verified on-chain (exist on Qubic blockchain)
+- Tested for wallet access
 
 ### Important Notes
 
@@ -77,10 +77,3 @@ All identities in this file have been:
 - `outputs/analysis/complete_mapping_database.json` - Alternative format (may not include all seeds)
 - `FOUND_IDENTITIES.md` - Initial 8 identities discovered
 - `scripts/utils/explore_complete_database.py` - Interactive explorer tool
-
----
-
-**Generated:** November 2024  
-**Source:** Anna Matrix analysis project  
-**Status:** Complete and verified
-

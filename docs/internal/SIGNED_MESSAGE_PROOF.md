@@ -47,7 +47,7 @@ from hashlib import sha256
 seed = "aaaaaaaaaewamanayeyaaaaaywrlaebhiepesefaeejreqtremjchof"
 seed_value = 0
 for char in seed:
-    seed_value = seed_value * 26 + (ord(char) - ord('a'))
+ seed_value = seed_value * 26 + (ord(char) - ord('a'))
 seed_bytes = seed_value.to_bytes((seed_value.bit_length() + 7) // 8, 'big')
 private_key = sha256(seed_bytes).digest()[:32]
 
@@ -57,10 +57,10 @@ signing_key = ed25519.SigningKey(private_key)
 verifying_key = signing_key.get_verifying_key()
 
 try:
-    verifying_key.verify(bytes.fromhex("671f54756eaefb5834a8721fbeadb53fd26e79d914deae3fe66bbb7c6a385b67"), message)
-    print("✓ Signature valid")
+ verifying_key.verify(bytes.fromhex("671f54756eaefb5834a8721fbeadb53fd26e79d914deae3fe66bbb7c6a385b67"), message)
+ print(" Signature valid")
 except:
-    print("✗ Signature invalid")
+ print(" Signature invalid")
 ```
 
 ## What This Proves

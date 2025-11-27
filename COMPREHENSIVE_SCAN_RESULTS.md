@@ -28,9 +28,9 @@ This comprehensive scan tests a much larger set of identity candidates than the 
 - **Final results will be published** when the scan reaches 100%
 - **These are identity candidates** - not all may be "intentional" encodings
 - **The high success rate** could indicate:
-  - The extraction method is effective
-  - Qubic identities are common in Base-26 encoded data
-  - Or both
+ - The extraction method is effective
+ - Qubic identities are common in Base-26 encoded data
+ - Or both
 
 ## Statistical Context
 
@@ -54,4 +54,3 @@ Once the scan reaches 100%, we will:
 - Final results: Will be published when complete
 
 **Note**: This is research in progress. Final results may differ from current status.
-

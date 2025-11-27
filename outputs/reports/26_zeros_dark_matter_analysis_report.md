@@ -59,19 +59,19 @@ From repository documentation:
 ### Pattern Observations
 
 1. **Clustering**: Multiple zeros in similar regions:
-   - Region (36-44, 19): 3 zeros
-   - Region (68-70, 49-55): 4 zeros
-   - Region (78, 115-119): 2 zeros
-   - Region (100-101, 51): 2 zeros
+ - Region (36-44, 19): 3 zeros
+ - Region (68-70, 49-55): 4 zeros
+ - Region (78, 115-119): 2 zeros
+ - Region (100-101, 51): 2 zeros
 
 2. **Proximity to Identity Regions**: 
-   - Approximately 10 zeros are within or near identity extraction regions
-   - Approximately 10 zeros are outside typical identity regions
+ - Approximately 10 zeros are within or near identity extraction regions
+ - Approximately 10 zeros are outside typical identity regions
 
 3. **Column Patterns**:
-   - Column 19: 4 zeros (6, 36, 37, 44)
-   - Column 51: 3 zeros (68, 70, 100, 101)
-   - Column 115: 4 zeros (36, 44, 70, 78, 100)
+ - Column 19: 4 zeros (6, 36, 37, 44)
+ - Column 51: 3 zeros (68, 70, 100, 101)
+ - Column 115: 4 zeros (36, 44, 70, 78, 100)
 
 ## Geometric Patterns
 
@@ -173,4 +173,3 @@ The 26 zeros show:
 - Our findings: 23,477 identities, 98.79% success rate
 
 **Note**: This analysis is part of ongoing research. Interpretations may evolve as research continues.
-

@@ -1,6 +1,6 @@
 # Matrix Value Correlation Analysis: Facts
 
-**Date**: 2025-11-22  
+**Date**: 2025-11-22 
 **Objective**: Check correlations between matrix values and identities
 
 Wondering if the actual matrix values at the coordinates where identities were extracted tell us anything. Do certain values correlate with certain identity properties?
@@ -44,5 +44,5 @@ The row_scan and l_shape patterns have noticeably higher means, which suggests t
 
 ## IMPORTANT
 
-**This analysis shows FACTS only!**  
+**This analysis shows FACTS only!** 
 **No interpretations!**

@@ -30,11 +30,11 @@ Include:
 **Date**: 2025-11-22
 **Method**: Ran all extraction scripts + on-chain verification
 **Results**: 
-- Matrix hash verified: ✓
-- Diagonal identities extracted: ✓ (matched documented identities)
-- Vortex identities extracted: ✓ (matched documented identities)
-- On-chain verification: ✓ (all 8 identities exist)
-- Control group: ✓ (0 hits in 1000 random matrices)
+- Matrix hash verified: 
+- Diagonal identities extracted: (matched documented identities)
+- Vortex identities extracted: (matched documented identities)
+- On-chain verification: (all 8 identities exist)
+- Control group: (0 hits in 1000 random matrices)
 
 **Notes**: Everything reproduced exactly as documented.
 ```
@@ -50,4 +50,3 @@ Independent verification is essential for credibility. If multiple researchers c
 ## Contact
 
 To submit verification, open a GitHub issue or pull request with your verification file.
-

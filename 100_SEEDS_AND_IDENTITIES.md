@@ -26,7 +26,7 @@ You can verify these identities on-chain using:
 
 ```bash
 docker run --rm -it -v "$PWD":/workspace -w /workspace qubic-proof \
-  python scripts/verify/rpc_check.py
+ python scripts/verify/rpc_check.py
 ```
 
 Or check individually:

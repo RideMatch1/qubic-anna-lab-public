@@ -179,7 +179,5 @@
 - [Aigarth Intelligent Tissue GitHub](https://github.com/Aigarth/aigarth-it)
 - Aigarth Paper documentation
 - Qubic Stack Architecture
-- Our findings: 23,477 identities, 98.79% success rate
 
 **Note**: This analysis is part of ongoing research. Interpretations may evolve as research continues.
-

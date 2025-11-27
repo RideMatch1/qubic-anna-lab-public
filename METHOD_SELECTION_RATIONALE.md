@@ -66,4 +66,3 @@ The findings are interesting, reproducible, and anomalous. But they are not form
 **This is the nuclear honesty move** - we're telling you exactly what we know and what we don't know.
 
 If you want to evaluate the findings, you must account for this limitation.
-

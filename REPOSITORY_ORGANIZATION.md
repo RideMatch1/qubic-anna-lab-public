@@ -11,7 +11,7 @@ This repository has been organized for clarity:
 - `FOUND_IDENTITIES.md` - Initial 8 identities
 - `100_SEEDS_AND_IDENTITIES.md` - Sample of 100 seeds with real IDs
 - `100_seeds_and_identities.json` - Machine-readable format
-- `FINAL_ANALYSIS_STATUS.md` - Current research status
+- `RESEARCH_OVERVIEW.md` - Current research status
 - `IDENTITY_DISCREPANCY_ANALYSIS.md` - Detailed discrepancy analysis
 - `MAPPING_DATABASE_SUMMARY.md` - Summary of 23,765 seeds
 - `ALL_23765_SEEDS_SUMMARY.md` - Complete seeds database summary
@@ -45,4 +45,3 @@ This repository has been organized for clarity:
 - **Sample data**: `100_SEEDS_AND_IDENTITIES.md`
 - **Complete database summaries**: `MAPPING_DATABASE_SUMMARY.md` and `ALL_23765_SEEDS_SUMMARY.md`
 - **Verification**: `./run_all_verifications.sh`
-

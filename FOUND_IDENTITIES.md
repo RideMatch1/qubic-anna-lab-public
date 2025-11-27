@@ -24,7 +24,7 @@ All 8 identities can be verified on-chain using:
 
 ```bash
 docker run --rm -it -v "$PWD":/workspace -w /workspace qubic-proof \
-  python scripts/verify/rpc_check.py
+ python scripts/verify/rpc_check.py
 ```
 
 Or check individually using Qubic RPC:
@@ -73,4 +73,3 @@ Identities were extracted using:
 - Vortex patterns (4 identities)
 
 See `analysis/21_base26_identity_extraction.py` and `analysis/71_9_vortex_extraction.py` for details.
-

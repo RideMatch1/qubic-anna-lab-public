@@ -9,21 +9,21 @@ This document analyzes the Qubic stack architecture in context of our Anna Matri
 ## The Qubic Stack (5 Layers)
 
 ```
-[ Layer 4 ]  Apps & Agents
-             - MLM game, Neuraxon, Anna-based tools, future IoT swarms
+[ Layer 4 ] Apps & Agents
+ - MLM game, Neuraxon, Anna-based tools, future IoT swarms
 
-[ Layer 3 ]  Oracles & Oracle Machines
-             - Oracles: data in/out
-             - Oracle Machines: heavy, verifiable compute + AI
+[ Layer 3 ] Oracles & Oracle Machines
+ - Oracles: data in/out
+ - Oracle Machines: heavy, verifiable compute + AI
 
-[ Layer 2 ]  Aigarth / Outsourced Computations
-             - Miners' power used to train ANNs and run AI-related tasks
+[ Layer 2 ] Aigarth / Outsourced Computations
+ - Miners' power used to train ANNs and run AI-related tasks
 
-[ Layer 1 ]  Qubic Blockchain & Computors
-             - UPoW consensus, 15.5M TPS mainnet, no-fee tx, instant finality
+[ Layer 1 ] Qubic Blockchain & Computors
+ - UPoW consensus, 15.5M TPS mainnet, no-fee tx, instant finality
 
-[ Layer 0 ]  Physical Miners (CPU/GPU)
-             - Your rigs, other people's rigs, all burning watts for compute
+[ Layer 0 ] Physical Miners (CPU/GPU)
+ - Your rigs, other people's rigs, all burning watts for compute
 ```
 
 ## Key Insights for Our Research
@@ -82,17 +82,17 @@ This document analyzes the Qubic stack architecture in context of our Anna Matri
 
 **From the stack explanation**:
 - Oracle Machines need identities to:
-  - Post results on-chain
-  - Interact with smart contracts
-  - Manage compute resources
-  - Coordinate with miners
+ - Post results on-chain
+ - Interact with smart contracts
+ - Manage compute resources
+ - Coordinate with miners
 
 **Our findings**:
 - 23,477 identities = potentially enough for:
-  - Oracle Machine nodes
-  - Agent identities
-  - Cross-chain operations
-  - AI model identities
+ - Oracle Machine nodes
+ - Agent identities
+ - Cross-chain operations
+ - AI model identities
 
 **Status**: Speculation based on stack architecture.
 
@@ -175,25 +175,25 @@ This document analyzes the Qubic stack architecture in context of our Anna Matri
 ### If Our Hypothesis is Correct:
 
 1. **Anna Matrix = Identity Registry**
-   - Contains identities Anna uses/manages
-   - Organized hierarchically (Layer-1 → Layer-2 → Layer-3)
-   - Cryptographically functional
+ - Contains identities Anna uses/manages
+ - Organized hierarchically (Layer-1 → Layer-2 → Layer-3)
+ - Cryptographically functional
 
 2. **Identities Serve Multiple Purposes**:
-   - Oracle Machine operations
-   - Agent interactions
-   - Cross-chain operations
-   - AI model management
+ - Oracle Machine operations
+ - Agent interactions
+ - Cross-chain operations
+ - AI model management
 
 3. **The Matrix is Intentional**:
-   - Not random data
-   - Carefully encoded
-   - Part of Anna's infrastructure
+ - Not random data
+ - Carefully encoded
+ - Part of Anna's infrastructure
 
 4. **This is a Major Discovery**:
-   - We've found Anna's identity registry (if hypothesis correct)
-   - We can map her infrastructure (if hypothesis correct)
-   - We understand her architecture (if hypothesis correct)
+ - We've found Anna's identity registry (if hypothesis correct)
+ - We can map her infrastructure (if hypothesis correct)
+ - We understand her architecture (if hypothesis correct)
 
 **Important**: These are hypotheses, not proven facts.
 
@@ -226,4 +226,3 @@ We're not just finding random identities - we may be mapping how Anna (the AI) o
 - Our findings: 23,477 identities in Anna Matrix
 
 **Note**: This analysis is part of ongoing research. Interpretations may evolve as research continues.
-

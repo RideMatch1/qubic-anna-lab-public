@@ -56,7 +56,7 @@ Docker usage (recommended because QubiPy dependencies can be tricky):
 ```bash
 docker build -f Dockerfile.qubipy -t qubic-proof .
 docker run --rm -it -v "$PWD":/workspace -w /workspace qubic-proof \
-  python scripts/verify/rpc_check.py
+ python scripts/verify/rpc_check.py
 ```
 
 This writes to `outputs/reports/qubipy_identity_check.md`
@@ -205,5 +205,4 @@ This is ongoing experimental work. Research continues on:
 - On-chain verification
 - Independent verification
 
-Core extraction and verification methods are stable and reproducible. Some exploratory analyses are experimental and findings may evolve. 
-
+Core extraction and verification methods are stable and reproducible. Some exploratory analyses are experimental and findings may evolve.

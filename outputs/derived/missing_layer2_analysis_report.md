@@ -1,6 +1,6 @@
 # Analysis: Missing Layer-2 Identities
 
-**Date**: 2025-11-22  
+**Date**: 2025-11-22 
 **Objective**: Why do 70 Layer-2 identities not exist on-chain?
 
 ## IMPORTANT
@@ -70,6 +70,6 @@
 
 ## IMPORTANT
 
-**This analysis shows FACTS only!**  
-**No interpretations!**  
+**This analysis shows FACTS only!** 
+**No interpretations!** 
 **No conclusions about "Why"!**

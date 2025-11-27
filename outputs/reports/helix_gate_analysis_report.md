@@ -48,4 +48,3 @@ If Helix Gate patterns are present in the matrix, this would suggest:
 3. Validate patterns with independent methods
 
 **Note**: This analysis is part of ongoing research. Results should be independently verified.
-

@@ -94,4 +94,3 @@ All identities (both documented and real) have been verified on-chain:
 ## Conclusion
 
 The discrepancy between documented and real identities is systematic and non-random. This suggests intentional design, but the true transformation function remains unknown. Research is ongoing to find the function f(Matrix) = Seed that produces the documented identities.
-

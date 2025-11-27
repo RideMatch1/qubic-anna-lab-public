@@ -27,7 +27,7 @@ grep -r "eval\|exec\|__import__\|compile\|marshal\|pickle" --include="*.py" .
 
 **What you should find:**
 - Python scripts (.py) - readable text files
-- Bash scripts (.sh) - readable text files  
+- Bash scripts (.sh) - readable text files 
 - Markdown files (.md) - readable text files
 - Excel file (.xlsx) - data file
 - JSON files - data files
@@ -155,39 +155,39 @@ docker run --rm -v "$PWD":/workspace -w /workspace qubic-proof python scripts/ve
 **Before running anything:**
 
 1. **Clone to isolated location**
-   ```bash
-   mkdir ~/test-qubic
-   cd ~/test-qubic
-   git clone <repo-url>
-   ```
+ ```bash
+ mkdir ~/test-qubic
+ cd ~/test-qubic
+ git clone <repo-url>
+ ```
 
 2. **Review code first**
-   ```bash
-   # Read the main script
-   less run_all_verifications.sh
-   
-   # Check what it calls
-   grep "python" run_all_verifications.sh
-   ```
+ ```bash
+ # Read the main script
+ less run_all_verifications.sh
+ 
+ # Check what it calls
+ grep "python" run_all_verifications.sh
+ ```
 
 3. **Use isolation**
-   ```bash
-   # Virtual environment
-   python3 -m venv venv
-   source venv/bin/activate
-   
-   # Or Docker
-   docker build -f Dockerfile.qubipy -t qubic-proof .
-   ```
+ ```bash
+ # Virtual environment
+ python3 -m venv venv
+ source venv/bin/activate
+ 
+ # Or Docker
+ docker build -f Dockerfile.qubipy -t qubic-proof .
+ ```
 
 4. **Monitor execution**
-   ```bash
-   # Watch file system (Linux/Mac)
-   watch -n 1 'find outputs/ -type f | wc -l'
-   
-   # Check network connections
-   netstat -an | grep ESTABLISHED
-   ```
+ ```bash
+ # Watch file system (Linux/Mac)
+ watch -n 1 'find outputs/ -type f | wc -l'
+ 
+ # Check network connections
+ netstat -an | grep ESTABLISHED
+ ```
 
 **What happens when you run scripts:**
 - Files read: `data/anna-matrix/Anna_Matrix.xlsx`
@@ -218,6 +218,5 @@ If you find any security concerns:
 
 ---
 
-**Last Updated**: 2025-11-22  
+**Last Updated**: 2025-11-22 
 **Note**: This document cannot prove safety. Verify everything yourself.
-

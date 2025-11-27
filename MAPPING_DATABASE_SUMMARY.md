@@ -92,4 +92,3 @@ The complete mapping database is available in JSON format:
 - `outputs/analysis/complete_mapping_database.json`
 
 For a sample of 100 seeds and identities, see `100_SEEDS_AND_IDENTITIES.md`.
-

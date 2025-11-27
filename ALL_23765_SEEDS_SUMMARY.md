@@ -105,4 +105,3 @@ All data can be verified independently:
 ## Contact
 
 For questions or independent verification, contact via Qubic Discord (@Jordan) or GitHub issues.
-

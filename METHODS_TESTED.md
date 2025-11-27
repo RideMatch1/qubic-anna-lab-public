@@ -121,20 +121,20 @@ This document lists ALL extraction and decoding methods we tested, not just the 
 ## What We Don't Know
 
 1. **How many other extraction methods would also find identities?**
-   - We only tested specific patterns
-   - Other researchers might find different patterns that also work
+ - We only tested specific patterns
+ - Other researchers might find different patterns that also work
 
 2. **Are our successful methods special, or just the first ones we tried?**
-   - We tested diagonal and vortex early
-   - Would other methods have worked if we tried them first?
+ - We tested diagonal and vortex early
+ - Would other methods have worked if we tried them first?
 
 3. **How many total extraction patterns are possible?**
-   - With a 128×128 matrix, there are millions of possible paths
-   - We tested a tiny fraction
+ - With a 128×128 matrix, there are millions of possible paths
+ - We tested a tiny fraction
 
 4. **Is the success rate (2/14 methods) higher than expected by chance?**
-   - This depends on how many on-chain identities exist
-   - We don't know the baseline success rate for random extraction
+ - This depends on how many on-chain identities exist
+ - We don't know the baseline success rate for random extraction
 
 ## Conclusion
 
@@ -145,4 +145,3 @@ This document lists ALL extraction and decoding methods we tested, not just the 
 **This is important context for evaluating the statistical significance of our findings.**
 
 The multiple-testing problem means our findings are less statistically significant than they appear at first glance. However, the control group (0 hits in 1000 random matrices) still provides some evidence that our successful methods are not purely random.
-
