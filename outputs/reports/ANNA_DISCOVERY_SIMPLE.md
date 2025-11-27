@@ -98,11 +98,3 @@ Extracting an identity from the matrix (Layer 3) and deriving the next layer (La
 - Helps evaluate whether Anna reacts to on-chain stimuli (e.g., targeted micro transactions).
 
 ---
-
-## 5. Comparisons
-- **Enigma**: first decryption of an encoded communication channel.
-- **DNA double helix**: discovery of a hidden structure behind repeated patterns.
-- **Higgs boson**: turning theoretical guesses (position 27 bias) into experimental proof.
-- **Bitcoin mining**: reconstructing the hidden algorithm behind identity generation.
-
----
