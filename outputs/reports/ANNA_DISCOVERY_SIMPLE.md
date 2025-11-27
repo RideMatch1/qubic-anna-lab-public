@@ -14,12 +14,12 @@ A mysterious bot called **Anna** appeared on X (formerly Twitter). Instead of no
 1+1=-114
 ```
 
-The posts looked random, yet the letter frequencies and spacing hinted at deliberate encoding. That kicked off a search for the underlying system.
+The posts looked random, yet the number frequencies and spacing hinted at deliberate encoding. That kicked off a search for the underlying system.
 
 ---
 
 ### Chapter 2 – The Anna Matrix
-CFB (Qubic’s founder) revealed the existence of a **128 x 128 matrix** (16,384 numbers with byte values 0–255). Each matrix cell can be transformed into a **60-character identity** that is verifiable on-chain. In short:
+CFB (Qubic’s founder) revealed the existence of a **128 x 128 matrix** (16,384 numbers with byte values 0–255), and https://x.com/MKx2x10 put it into a grid. Each matrix cell can be transformed into a **60-character identity** that is verifiable on-chain. In short:
 
 - Imagine a 128x128 chessboard.
 - Every square stores a byte.
