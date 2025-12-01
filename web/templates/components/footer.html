@@ -1,0 +1,80 @@
+<div class="footer-style-four theme-basic-footer">
+    <div class="container">
+        <div class="inner-wrapper">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 footer-intro mb-40">
+                    <div class="logo">
+                        <a href="{{ url_for('index') }}">
+                            <img src="{{ url_for('static', filename='images/logo/anna_matrix_lab_logo.png') }}?v={{ timestamp }}" alt="Anna Matrix Lab" class="logo-img" style="height: 60px; width: auto; max-width: 220px; margin-bottom: 1rem; display: block;">
+                        </a>
+                    </div>
+                    <p style="margin-bottom: 1rem;">Independent research on the Anna Matrix. All methods, data, and code are publicly available for verification.</p>
+                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6;">
+                        <strong>Disclaimer:</strong> This is independent research for scientific purposes. We are not affiliated with, endorsed by, or associated with Qubic or any Qubic-related entities. All findings must be independently verified. No warranties or guarantees are provided.
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-30">
+                    <h5 class="footer-title">Navigation</h5>
+                    <ul class="footer-nav-link style-none">
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('visualization') }}">Visualization</a></li>
+                        <li><a href="{{ url_for('explore') }}">Explore</a></li>
+                        <li><a href="{{ url_for('methodology') }}">Methodology</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 mb-30">
+                    <h5 class="footer-title">Analysis</h5>
+                    <ul class="footer-nav-link style-none">
+                        <li><a href="{{ url_for('ml_position27') }}">ML Position 27</a></li>
+                        <li><a href="{{ url_for('grid_structure') }}">Grid Structure</a></li>
+                        <li><a href="{{ url_for('statistics') }}">Statistics</a></li>
+                        <li><a href="{{ url_for('discrepancy') }}">Discrepancy</a></li>
+                        <li><a href="{{ url_for('layers') }}">Layers</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-30">
+                    <h5 class="footer-title">Research</h5>
+                    <ul class="footer-nav-link style-none">
+                        <li><a href="{{ url_for('helix_gates') }}">Helix Gates</a></li>
+                        <li><a href="{{ url_for('dark_matter') }}">Dark Matter</a></li>
+                        <li><a href="{{ url_for('evolutionary') }}">Evolutionary</a></li>
+                    </ul>
+                    <h5 class="footer-title mt-30">Transparency</h5>
+                    <ul class="footer-nav-link style-none">
+                        <li><a href="https://github.com/RideMatch1/qubic-anna-lab-public" target="_blank" rel="noopener noreferrer">Code Repository</a></li>
+                        <li><a href="{{ url_for('methodology') }}">Reproducibility</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bottom-footer">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="legal-disclaimer-collapse" style="margin-bottom: 1.5rem;">
+                            <button class="btn btn-link p-0 text-start w-100" type="button" data-bs-toggle="collapse" data-bs-target="#legalNoticeCollapse" aria-expanded="false" aria-controls="legalNoticeCollapse" style="text-decoration: none; color: #1e293b; font-weight: 600; font-size: 0.95rem;">
+                                <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                                    <span>Legal Notice</span>
+                                    <i class="bi bi-chevron-down" style="font-size: 0.85rem; transition: transform 0.3s ease;"></i>
+                                </span>
+                            </button>
+                            <div class="collapse" id="legalNoticeCollapse">
+                                <div style="background: #f8f9fa; padding: 1.25rem; border-radius: 8px; margin-top: 0.75rem; border-left: 4px solid #3b82f6;">
+                                    <p style="font-size: 0.85rem; color: #475569; line-height: 1.7; margin: 0;">
+                                        This website presents independent research findings for scientific and educational purposes only. The research is conducted voluntarily and without commercial interest. We are not affiliated with, endorsed by, or associated with Qubic, Qubic Foundation, or any Qubic-related entities, organizations, or individuals. All claims, findings, and conclusions presented on this website must be independently verified by users. No warranties, guarantees, or representations are made regarding the accuracy, completeness, or validity of any information. Users are solely responsible for their own verification and interpretation of the data. This research is provided "as is" without any express or implied warranties. The authors and contributors assume no liability for any consequences arising from the use or misuse of this information.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-lg-flex justify-content-between align-items-center pt-20">
+                    <p class="copyright text-center text-lg-start mb-0 pb-15" style="font-size: 0.9rem; color: #64748b;">
+                        All research is transparent and reproducible.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
